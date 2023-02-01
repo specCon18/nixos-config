@@ -6,15 +6,15 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
     };
-    outputs = { self, nixpkgs, ... }@inputs:
+    outputs = { self, nixos-generators, nixpkgs, ... }@inputs:
     {
         example = nixos-generators.nixosGenerate {
             system = "x86_64-linux";
             modules = [
                 ./hosts/example.nix
             ];
-            format = "qcow";
+            format = "virtualbox";
         };
-        apps."x86_64-linux".default = lollypops.apps."x86_64-linux".default { configFlake = self; };
+        
     };
 }

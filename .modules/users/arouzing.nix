@@ -1,4 +1,4 @@
-_: { config, pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:
 {
     users.users.arouzing = {
     isNormalUser = true;

@@ -1,7 +1,7 @@
 _: { config, pkgs, lib, ... }:
 
 {
-    services.openssh = lib.mkDefault{
+    services.openssh = {
         enable = true;
         openFirewall = true;
         startWhenNeeded = true;
