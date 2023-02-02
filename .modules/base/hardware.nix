@@ -5,6 +5,7 @@
   imports =
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
+  networking.useDHCP = true;
   # boot.initrd.availableKernelModules = [ "uhci_hcd" "ehci_pci" "ahci" "usbhid" "sd_mod" "sdhci_pci" ];
   # boot.initrd.kernelModules = [ "dm-snapshot" ];
   # boot.kernelModules = [ "kvm-intel" "wl" ];
