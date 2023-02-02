@@ -4,7 +4,7 @@
   imports =
     [ # Include the results of the hardware scan.
         # ../.modules/base/hardware.nix
-        # ../.modules/services/docker.nix
+        ../.modules/services/docker.nix
         ../.modules/users/arouzing.nix
         ../.modules/services/openssh.nix
     ];
@@ -28,11 +28,11 @@
   time.timeZone = "America/New_York";
 
   # Open ports in the firewall.
-  # networking.firewall = { 
-  #   enable = true;
-  #   allowedTCPPorts = [];
-  #   allowedUDPPorts = [];
-  # };
+  networking.firewall = { 
+    enable = true;
+    allowedTCPPorts = [];
+    allowedUDPPorts = [];
+  };
   ## main services
   system.stateVersion = "22.11";
 
