@@ -13,7 +13,7 @@
             modules = [
                 ./hosts/example.nix
             ];
-            format = "virtualbox";
+            format = "qcow";
         };
         
     };
