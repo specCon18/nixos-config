@@ -1,16 +1,18 @@
-_: { config, pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:
 
 {
-    services.openssh = {
+    services.openssh = lib.mkDefault {
         enable = true;
         openFirewall = true;
+        settings = lib.mkDefault {
+            passwordAuthentication = false;
+            permitRootLogin = "no";
+            kbdInteractiveAuthentication = false;
+        };
         startWhenNeeded = true;
         kexAlgorithms = [ "curve25519-sha256@libssh.org" ];
-        passwordAuthentication = false;
-        kbdInteractiveAuthentication = false;
-        permitRootLogin = "no";
     };
-    security.pam = mkDefault{
+    security.pam = lib.mkDefault {
         enableSSHAgentAuth = true;
         services.sudo.sshAgentAuth = true;
     };
