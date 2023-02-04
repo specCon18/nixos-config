@@ -15,5 +15,13 @@
             ];
             format = "qcow";
         };
+
+        example = nixos-generators.nixosGenerate {
+            system = "x86_64-linux";
+            modules = [
+                ./hosts/example.nix
+            ];
+            format = "qcow";
+        };
     };
 }
