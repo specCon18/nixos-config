@@ -6,7 +6,7 @@
         # ../.modules/base/hardware.nix
         ../.modules/services/docker.nix
         ../.modules/users/arouzing.nix
-        ../.modules/user/speccon18.nix
+        ../.modules/users/speccon18.nix
         ../.modules/services/openssh.nix
     ];
 
