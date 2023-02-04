@@ -20,7 +20,7 @@
   networking = {
     firewall.checkReversePath = "loose";
     hostName = "example"; # Define your hostname.
-    networkmanager.enable = true;
+    # networkmanager.enable = true;
   };
 
   # services.tailscale.enable = true;
