@@ -15,6 +15,7 @@
     environment.systemPackages = with pkgs; [
       htop
       vim
+      nano
       tailscale
     ];
 
