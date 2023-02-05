@@ -1,9 +1,10 @@
-{ config, pkgs, lib, ... }:
+{ modulesPath, config, pkgs, lib, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
         # ../.modules/base/hardware.nix
+        (modulesPath + "/profiles/qemu-guest.nix")
         ../.modules/services/docker.nix
         ../.modules/users/arouzing.nix
         ../.modules/users/speccon18.nix
@@ -14,7 +15,6 @@
     environment.systemPackages = with pkgs; [
       htop
       vim
-      # sleep
       tailscale
     ];
 
@@ -24,7 +24,7 @@
     # networkmanager.enable = true;
   };
 
-  # services.tailscale.enable = true;
+  services.tailscale.enable = true;
 
   time.timeZone = "America/New_York";
 
@@ -36,5 +36,10 @@
   };
   ## main services
   system.stateVersion = "22.11";
+
+  ### testing ###
+  boot.initrd.availableKernelModules =
+    [ "ata_piix" "uhci_hcd" "virtio_pci" "sr_mod" "virtio_blk" ];
+  
 
 }
