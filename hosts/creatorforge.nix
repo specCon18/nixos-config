@@ -7,7 +7,7 @@
         ../.modules/services/docker.nix
         ../.modules/users/speccon18.nix
         ../.modules/services/openssh.nix
-        ../.modules/features/desktop-environments/gnome.nix
+        ../.modules/features/desktop/environments/gnome.nix
     ];
     #TODO: MOVE TO MODULE LATER
     nixpkgs.config.allowUnfree = true;
