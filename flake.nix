@@ -20,7 +20,7 @@
                 system = "x86_64-linux";
                 modules = [
                     ./hosts/creatorforge.nix
-                    ./modules/base/proxmox-vm-hardware.nix
+                    ./.modules/base/proxmox-vm-hardware.nix
                 ];
             };
         };
