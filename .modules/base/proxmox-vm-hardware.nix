@@ -12,8 +12,8 @@
 
   system.stateVersion = "22.11";
   
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/40fe3178-6ec1-450f-93fd-c359f2f3daf9";
+  fileSystems."/" = { 
+      device = "/dev/disk/by-uuid/40fe3178-6ec1-450f-93fd-c359f2f3daf9";
       fsType = "ext4";
     };
 
@@ -40,17 +40,19 @@
     };
     kernelModules = [ "kvm-amd" ];
     extraModulePackages = [ ];
-    loader.grub = {
-      device =
+    #loader.grub = {
+    #  device = lib.mkDefault (if (hasNoFsPartition || supportBios) then
         # Even if there is a separate no-fs partition ("/dev/disk/by-partlabel/no-fs" i.e. "/dev/vda2"),
         # which will be used the bootloader, do not set it as loader.grub.device.
         # GRUB installation fails, unless the whole disk is selected.
-        "/dev/disk/by-uuid/40fe3178-6ec1-450f-93fd-c359f2f3daf9";
-      # efiSupport = lib.mkDefault supportEfi;
-      # efiInstallAsRemovable = lib.mkDefault supportEfi;
-    };
-
-    loader.timeout = 0;
+    #    "/dev/disk/by-uuid/40fe3178-6ec1-450f-93fd-c359f2f3daf9"
+    #  else
+    #    "nodev");
+    #};
+    loader = {
+      systemd-boot.enable = "true";
+      timeout = 0;
+    }
   };
 
 #  fileSystems."/" = {
