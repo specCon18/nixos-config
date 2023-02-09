@@ -1,6 +1,6 @@
 {
     inputs = {
-        nixpkgs-small.url = "github:NixOS/nixpkgs/nixos-22.11";
+        nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";
         nixos-generators = {
             url = "github:nix-community/nixos-generators";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -8,20 +8,19 @@
     };
     outputs = { self, nixos-generators, nixpkgs, ... }@inputs:
     {
-        example = nixos-generators.nixosGenerate {
+        proxmox = nixos-generators.nixosGenerate {
             system = "x86_64-linux";
             modules = [
-                ./hosts/example.nix
+                ./hosts/creatorforge.nix
             ];
-            format = "qcow";
+            format = "proxmox";
         };
-
-        openldap = nixos-generators.nixosGenerate {
+        creatorforge-vm = nixpkgs.lib.nixosSystem {
             system = "x86_64-linux";
             modules = [
-                ./hosts/openldap.nix
+                ./hosts/creatorforge.nix
+                ./modules/base/proxmox-vm-hardware.nix
             ];
-            format = "qcow";
         };
     };
 }
