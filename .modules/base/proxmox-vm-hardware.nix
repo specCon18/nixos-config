@@ -47,8 +47,8 @@
         # which will be used the bootloader, do not set it as loader.grub.device.
         # GRUB installation fails, unless the whole disk is selected.
         "/dev/disk/by-uuid/40fe3178-6ec1-450f-93fd-c359f2f3daf9";
-      efiSupport = lib.mkDefault supportEfi;
-      efiInstallAsRemovable = lib.mkDefault supportEfi;
+      # efiSupport = lib.mkDefault supportEfi;
+      # efiInstallAsRemovable = lib.mkDefault supportEfi;
     };
 
     loader.timeout = 0;
