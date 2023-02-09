@@ -37,7 +37,7 @@
       micro
       tailscale
       firefox
-      codium
+      vscodium-fhs
       # Gnome Extensions
       gnomeExtensions.dock-from-dash
       gnomeExtensions.pop-shell
