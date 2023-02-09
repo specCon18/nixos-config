@@ -15,12 +15,14 @@
             ];
             format = "proxmox";
         };
-        creatorforge-vm = nixpkgs.lib.nixosSystem {
-            system = "x86_64-linux";
-            modules = [
-                ./hosts/creatorforge.nix
-                ./modules/base/proxmox-vm-hardware.nix
-            ];
+        nixosConfigurations = {
+            creatorforge-vm = nixpkgs.lib.nixosSystem {
+                system = "x86_64-linux";
+                modules = [
+                    ./hosts/creatorforge.nix
+                    ./modules/base/proxmox-vm-hardware.nix
+                ];
+            };
         };
     };
 }
