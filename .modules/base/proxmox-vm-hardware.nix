@@ -18,10 +18,10 @@
     initrd = {
       availableKernelModules = [ "uhci_hcd" "ehci_pci" "ahci" "virtio_pci" "virtio_blk" "uas"];
       kernelModules = [ ];
-    }
+    };
     kernelModules = [ "kvm-amd" ];
     extraModulePackages = [ ];
-  }
+  };
   
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/40fe3178-6ec1-450f-93fd-c359f2f3daf9";
