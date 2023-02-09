@@ -11,7 +11,6 @@
         layout = "us";
         xkbVariant = "";
         displayManager = {
-              gnome.enable = true;
               gdm.enable = true;
               gdm.wayland = true;
               # defaultSession = lib.mkDefault "gnome";
