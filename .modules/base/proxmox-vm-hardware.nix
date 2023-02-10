@@ -51,6 +51,7 @@
       timeout = 0;
       };
     };
+  };
 #  fileSystems."/" = {
 #    device = "/dev/disk/by-label/nixos";
 #    autoResize = true;
