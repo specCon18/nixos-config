@@ -35,26 +35,28 @@
     growPartition = true;
     kernelParams = [ "console=ttyS0" ];
     initrd = {
-      availableKernelModules = [ "uhci_hcd" "ehci_pci" "ahci" "virtio_pci" "virtio_blk" "uas"];
-      kernelModules = [ ];
+      availableKernelModules = [ "uhci_hcd" "ehci_pci" "ahci" "virtio_pci" "virtio_blk" ];
+      kernelModules = [ "kvm-amd" ];
     };
-    kernelModules = [ "kvm-amd" ];
     extraModulePackages = [ ];
-    #loader.grub = {
-    #  device = lib.mkDefault (if (hasNoFsPartition || supportBios) then
+    # loader = {
+      #systemd-boot.enable = true;
+      #grub = {
+        # device = {
         # Even if there is a separate no-fs partition ("/dev/disk/by-partlabel/no-fs" i.e. "/dev/vda2"),
         # which will be used the bootloader, do not set it as loader.grub.device.
         # GRUB installation fails, unless the whole disk is selected.
-    #    "/dev/disk/by-uuid/40fe3178-6ec1-450f-93fd-c359f2f3daf9"
-    #  else
-    #    "nodev");
-    #};
-    loader = {
-      systemd-boot.enable = true;
-      timeout = 0;
+          # "/dev/disk/by-uuid/40fe3178-6ec1-450f-93fd-c359f2f3daf9"
+        # };
+      # timeout = 0;
+      # };
     };
-  };
+    fileSystems."/" = {  
+      device = "/dev/disk/by-uuid/40fe3178-6ec1-450f-93fd-c359f2f3daf9";
+      fsType = "ext4";
+    };
 
+  swapDevices = [ ];
 #  fileSystems."/" = {
 #    device = "/dev/disk/by-label/nixos";
 #    autoResize = true;
@@ -64,6 +66,7 @@
 #    device = "/dev/disk/by-label/ESP";
 #    fsType = "vfat";
 #  };
-
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   services.qemuGuest.enable = lib.mkDefault true;
 }
