@@ -60,6 +60,5 @@
 #    device = "/dev/disk/by-label/ESP";
 #    fsType = "vfat";
 #  };
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   services.qemuGuest.enable = lib.mkDefault true;
 }
