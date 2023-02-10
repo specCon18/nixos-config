@@ -51,10 +51,6 @@
       # timeout = 0;
       # };
     };
-    fileSystems."/" = {  
-      device = "/dev/disk/by-uuid/40fe3178-6ec1-450f-93fd-c359f2f3daf9";
-      fsType = "ext4";
-    };
 
   swapDevices = [ ];
 #  fileSystems."/" = {
