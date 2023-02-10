@@ -26,9 +26,11 @@
                     ./hosts/creatorforge.nix
                     ./.modules/base/proxmox-vm-hardware.nix
                     ({pkgs, config, ...}:{
-                        environment.systemPackages = with pkgs; [
-                            inputs.nixpkgs-wayland.packages.${system}.wayfire-unstable
-                        ];
+                        config = {
+                            environment.systemPackages = with pkgs; [
+                                inputs.nixpkgs-wayland.packages.${system}.wayfire-unstable
+                            ];
+                        };
                     })
                 ];
             };
