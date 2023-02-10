@@ -46,8 +46,8 @@
         # which will be used the bootloader, do not set it as loader.grub.device.
         # GRUB installation fails, unless the whole disk is selected.
         device = "/dev/vda";
-      timeout = 0;
       };
+      timeout = 0;
     };
   };
 #  fileSystems."/" = {
