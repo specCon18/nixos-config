@@ -45,7 +45,7 @@
         # Even if there is a separate no-fs partition ("/dev/disk/by-partlabel/no-fs" i.e. "/dev/vda2"),
         # which will be used the bootloader, do not set it as loader.grub.device.
         # GRUB installation fails, unless the whole disk is selected.
-        device = "/dev/disk/by-uuid/40fe3178-6ec1-450f-93fd-c359f2f3daf9";
+        device = "/dev/vda";
       timeout = 0;
       };
     };
