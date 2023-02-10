@@ -40,7 +40,7 @@
     };
     extraModulePackages = [ ];
     loader = {
-      systemd-boot.enable = true;
+      # systemd-boot.enable = true;
       grub = {
         device = {
         # Even if there is a separate no-fs partition ("/dev/disk/by-partlabel/no-fs" i.e. "/dev/vda2"),
