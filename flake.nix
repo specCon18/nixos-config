@@ -1,6 +1,10 @@
 {
     inputs = {
         nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";
+        nixpkgs-wayland  = { 
+            url = "github:nix-community/nixpkgs-wayland"; 
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
         nixos-generators = {
             url = "github:nix-community/nixos-generators";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -21,6 +25,11 @@
                 modules = [
                     ./hosts/creatorforge.nix
                     ./.modules/base/proxmox-vm-hardware.nix
+                    ({pkgs, config, ...}:{
+                        environment.systemPackages = with pkgs; [
+                            inputs.nixpkgs-wayland.packages.${system}.waybar
+                        ];
+                    })
                 ];
             };
         };
