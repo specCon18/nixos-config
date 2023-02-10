@@ -51,8 +51,6 @@
       # timeout = 0;
       # };
     };
-
-  swapDevices = [ ];
 #  fileSystems."/" = {
 #    device = "/dev/disk/by-label/nixos";
 #    autoResize = true;
