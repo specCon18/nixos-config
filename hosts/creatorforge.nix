@@ -38,6 +38,8 @@
       tailscale
       firefox
       vscodium-fhs
+      alacritty
+      starship
       # Gnome Extensions
       gnomeExtensions.dock-from-dash
       gnomeExtensions.pop-shell
