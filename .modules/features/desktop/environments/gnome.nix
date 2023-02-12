@@ -20,8 +20,6 @@
             enable = true;
             wayland = true;
           };
-          enable = true;
-          wayland = true;
           defaultSession = lib.mkDefault "gnome";
         };
       desktopManager = {
