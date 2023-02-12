@@ -1,6 +1,7 @@
 { config, pkgs, lib, ... }:
 {
     users.users.speccon18 = {
+    shell = pkgs.zsh;
     isNormalUser = true;
     initialHashedPassword = "$6$pJB0TDUj8IS8hQNJ$GfENlHg89lsUjRiSaePWJeqX1pevTTZOuEw5KgcVEpyPw9lyiAifz5ZiuOQnYxUAMhAiCmF/pCjaWSy6m5sWM/";
     openssh.authorizedKeys.keys = [

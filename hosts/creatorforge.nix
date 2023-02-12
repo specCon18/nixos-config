@@ -2,48 +2,44 @@
 
 {
   imports = [
-        # Include the results of the hardware scan.
-        (modulesPath + "/profiles/qemu-guest.nix")
-        ../.modules/services/docker.nix
-        ../.modules/users/speccon18.nix
-        ../.modules/services/openssh.nix
-        ../.modules/features/desktop/environments/gnome.nix
-    ];
-    #TODO: MOVE TO MODULE LATER
-    nixpkgs.config.allowUnfree = true;
-    nix = {
-      # nix flakes
-      package = pkgs.nixUnstable; # or versioned attributes like nix_2_4
-      extraOptions = ''
-        experimental-features = nix-command flakes
-      '';
-      #auto maintainence
-      settings.auto-optimise-store = lib.mkDefault true;
-      gc = {
-        automatic = true;
-        dates = "weekly";
-        options = "--delete-older-than 7d";
-      };
-      # prevent tampering
-      readOnlyStore = true;
+    # Include the results of the hardware scan.
+    (modulesPath + "/profiles/qemu-guest.nix")
+    ../.modules/services/docker.nix
+    ../.modules/users/speccon18.nix
+    ../.modules/services/openssh.nix
+    ../.modules/features/desktop/environments/gnome.nix
+    ../.modules/features/desktop/applications/speccon18.nix
+  ];
+  # Allow non opensource software to be installed
+  nixpkgs.config.allowUnfree = true;
+  
+  nix = {
+    ## NIX FLAKES ##
+    package = pkgs.nixUnstable; # or versioned attributes like nix_2_4
+    # enable flakes
+    extraOptions = ''experimental-features = nix-command flakes'';
+    # auto maintainence
+    settings.auto-optimise-store = lib.mkDefault true;
+    # prevent tampering
+    readOnlyStore = true;
+    # garbage collections
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
     };
-    # base packages
-    environment.systemPackages = with pkgs; [
-      htop
-      bat
-      exa
-      zsh
-      vim
-      micro
-      tailscale
-      firefox
-      vscodium-fhs
-      alacritty
-      starship
-      # Gnome Extensions
-      gnomeExtensions.dock-from-dash
-      gnomeExtensions.pop-shell
-    ];
+  };
+  # base packages
+  environment.systemPackages = with pkgs; [
+    htop
+    bat
+    exa
+    zsh
+    vim
+    micro
+    direnv
+    uutils-coreutils
+  ];
 
   networking = {
     firewall.checkReversePath = "loose";
@@ -65,8 +61,7 @@
   system.stateVersion = "22.11";
 
   ### testing ###
-  boot.initrd.availableKernelModules =
-    [ "ata_piix" "uhci_hcd" "virtio_pci" "sr_mod" "virtio_blk" ];
+  boot.initrd.availableKernelModules = [ "ata_piix" "uhci_hcd" "virtio_pci" "sr_mod" "virtio_blk" ];
   
 
 }

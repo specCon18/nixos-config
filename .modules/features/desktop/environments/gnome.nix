@@ -1,5 +1,10 @@
 { config, pkgs, lib, ... }:
 {
+  # Gnome extensions
+  environment.systemPackages = with pkgs; [
+    gnomeExtensions.dock-from-dash
+    gnomeExtensions.pop-shell
+  ];
   services = {
     gnome = {
       core-utilities.enable = false;
@@ -11,9 +16,13 @@
         layout = "us";
         xkbVariant = "";
         displayManager = {
-              gdm.enable = true;
-              gdm.wayland = true;
-              # defaultSession = lib.mkDefault "gnome";
+          gdm = {
+            enable = true;
+            wayland = true;
+          };
+          enable = true;
+          wayland = true;
+          defaultSession = lib.mkDefault "gnome";
         };
       desktopManager = {
         xterm.enable = lib.mkForce false;
