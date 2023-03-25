@@ -15,7 +15,7 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
     };
-    outputs = { self, home-manager, nixos-generators, flake-utils, nixpkgs, ... }@inputs:
+    outputs = { self, home-manager, nixos-generators, nixpkgs, ... }@inputs:
     {
         proxmox = nixos-generators.nixosGenerate {
             system = "x86_64-linux";
