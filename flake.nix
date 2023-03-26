@@ -7,8 +7,8 @@
         # NixOS Hardware Configuration for framework #
         nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 # For Wayfire #
-#        nixpkgs-wayland  = { 
-#            url = "github:nix-community/nixpkgs-wayland"; 
+#        nixpkgs-wayland  = {
+#            url = "github:nix-community/nixpkgs-wayland";
 #            inputs.nixpkgs.follows = "nixpkgs";
 #        };
         # For Home Manager #
@@ -33,7 +33,7 @@
                 config.allowUnfree = true;
             };
 
-            defaultPackage.x86_64-linux = home-manager.defaultPackage.x86_64-linux;      
+            defaultPackage.x86_64-linux = home-manager.defaultPackage.x86_64-linux;
             defaultNixOptions = {
                 nix.autoOptimiseStore = true;
             };
@@ -82,12 +82,12 @@
                     ] #modules to load
                     []; #modules to be loaded by home-manager
             };
-            homeConfigurations = {
-                speccon18 = home-manager.lib.homeManagerConfiguration {
-                    pkgs = nixpkgs.legacyPackages.x86_64-linux;                
-                    modules = [ ./.hm-modules/home-manager.nix];
-                };
-            };
+            # homeConfigurations = {
+                # speccon18 = home-manager.lib.homeManagerConfiguration {
+                    # pkgs = nixpkgs.legacyPackages.x86_64-linux;
+                    # modules = [ ./.hm-modules/home-manager.nix];
+                # };
+            # };
         };
-    
+
 }
