@@ -9,7 +9,6 @@
         partitions = [
           {
             type = "partition";
-            extraArgs = "--label nixboot01";
             name = "ESP";
             start = "1MiB";
             end = "100MiB";
@@ -26,7 +25,6 @@
           {
             name = "swap";
             type = "partition";
-            extraArgs = "--label nixswap01";
             start = "101MiB";
             end = "40960MiB";
             part-type = "primary";
@@ -37,7 +35,6 @@
           }
           {
             type = "partition";
-            extraArgs = "--label nixpv01";
             name = "luks";
             start = "40960MiB";
             end = "100%";
