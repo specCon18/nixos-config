@@ -3,19 +3,20 @@
 {
   programs = {
     home-manager.users.speccon18 = {
-      home.packages = [
-        pkgs.firefox
-        pkgs.vscodium-fhs
-        pkgs.alacritty
-        pkgs.starship
-        pkgs.diff-so-fancy
-      ];
+      home = {
+        username = "speccon18";
+        homeDirectory = "/home/speccon18";
+        stateVersion = "22.11";
+        packages = [
+          pkgs.firefox
+          pkgs.vscodium-fhs
+          pkgs.alacritty
+          pkgs.starship
+          pkgs.diff-so-fancy
+        ];
+      };
     };
-    home = {
-      username = "speccon18";
-      homeDirectory = "/home/speccon18";
-      stateVersion = "22.11";
-    };
+
     direnv = {
       enableZshIntegration = true;
       enable = true;
