@@ -36,7 +36,7 @@
           {
             type = "partition";
             name = "luks";
-            start = "100MiB";
+            start = "40960MiB";
             end = "100%";
             content = {
               type = "luks";
