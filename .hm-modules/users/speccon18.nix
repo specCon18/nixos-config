@@ -31,19 +31,19 @@
         save = 10000000;
       };
     };
-    git = {
-      enable = true;
-      userName = "specCon18";
-      userEmail = "specCon18@gmail.com";
+    #git = {
+    #  enable = true;
+    #  userName = "specCon18";
+    #  userEmail = "specCon18@gmail.com";
     #  signing = {
     #    key = "71F252936D785219";
     #    signByDefault = true;
     #  };
-      diff-so-fancy = {
-        enable = true;
-        changeHunkIndicators = true;
-      };
-      lfs.enable = true;
-    };
+    #  diff-so-fancy = {
+    #    enable = true;
+    #    changeHunkIndicators = true;
+    #  };
+    #  lfs.enable = true;
+    #};
   };
 }
