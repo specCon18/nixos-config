@@ -43,7 +43,7 @@
                     nixos-hardware.nixosModules.framework-12th-gen-intel
                     disko.nixosModules.disko
                     ./hosts/creatorforge.nix
-                    ./.modules/base/proxmox-vm-hardware.nix
+                    ./.modules/base/framework.nix
                 ];
             };
         };
