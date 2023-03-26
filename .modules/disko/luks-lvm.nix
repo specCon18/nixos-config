@@ -42,7 +42,6 @@
               type = "luks";
               name = "crypted";
               extraOpenArgs = [ "--allow-discards" ];
-              keyFile = "/tmp/secret.key";
               content = {
                 type = "lvm_pv";
                 vg = "pool";
