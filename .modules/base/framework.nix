@@ -18,7 +18,7 @@
       };
     };
     kernelModules = [ "kvm-intel" ];
-    kernelParams = [ "acpi_osi=linux" "module_blacklist=hid_sensor_hub" ];
+    kernelParams = [ "acpi_osi=linux" ];
     extraModulePackages = [ ];
     kernelPackages = pkgs.linuxKernel.kernels.linux_6_2;
     loader = {
@@ -43,5 +43,4 @@
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
