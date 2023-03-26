@@ -11,10 +11,15 @@
       pkgs.alacritty
       pkgs.starship
       pkgs.diff-so-fancy
+      pkgs.bat
+      pkgs.nushell
     ];
   };
   programs = {
-
+    #Generate and add configs for this
+    nushell = {
+      enable = true;
+    };
     direnv = {
       enableZshIntegration = true;
       enable = true;
@@ -22,6 +27,7 @@
     starship = {
       enable = true;
       enableZshIntegration = true;
+      enableNushellIntegration = true;
     };
     zsh = {
       enable = lib.mkDefault true;
