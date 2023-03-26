@@ -35,7 +35,7 @@
     };
   };
   disko.devices = import ../disko/luks-lvm.nix {
-    lib = nixpkgs.lib;
+#    lib = nixpkgs.lib;
     disks = [ "/dev/nvme0n1" ]; # replace this with your disk name i.e. /dev/nvme0n1
   };
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
