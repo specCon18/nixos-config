@@ -26,13 +26,14 @@
     # kernelPackages = lib.mkOverride pkgs.linuxPackages_latest; #pkgs.linuxKernel.kernels.linux_6_2;
     loader = {
       efi.canTouchEfiVariables = true;
-      grub = {
-        enable = true;
-        version = 2;
-        efiSupport = true;
-        efiInstallAsRemovable = true;
-        device = "/dev/nvme0n1" ;
-      };
+      systemd-boot.enable = true; 
+      # grub = {
+      #   enable = true;
+      #   version = 2;
+      #   efiSupport = true;
+      #   efiInstallAsRemovable = true;
+      #   device = "/dev/nvme0n1" ;
+      # };
     };
   };
   disko.devices = import ../disko/luks-lvm.nix {
