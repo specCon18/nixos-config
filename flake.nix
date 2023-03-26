@@ -50,7 +50,8 @@
             };
         };
         homeManagerConfiguration = {
-            speccon18 = {
+            speccon18 = home-manager.lib.homeManagerConfiguration {
+                pkgs = nixpkgs.legacyPackages.${system};
                 username = "speccon18";
                 homeDirectory = "/home/speccon18";
                 configuration = {
