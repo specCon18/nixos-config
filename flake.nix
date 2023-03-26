@@ -52,7 +52,7 @@
         homeConfigurations = {
             speccon18 = home-manager.lib.homeManagerConfiguration {
                 pkgs = nixpkgs.legacyPackages.x86_64-linux;
-                modules = [ ./hm-modules/home-manager.nix];
+                modules = [ ./.hm-modules/home-manager.nix];
                 # username = "speccon18";
                 # homeDirectory = "/home/speccon18";
                 # configuration = {
