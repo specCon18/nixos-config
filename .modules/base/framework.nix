@@ -30,7 +30,7 @@
         enable = true;
         version = 2;
         efiSupport = true;
-        devices =[ "/dev/nvme0n1" ];
+        device = "/dev/nvme0n1" ;
       };
     };
   };
