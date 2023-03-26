@@ -12,7 +12,7 @@
       kernelModules = [ "dm-snapshot" ];
       luks.devices = {
         crypted = {
-          device = "";
+          device = "/dev/nvme0n1p3";
           preLVM = true;
         };
       };
