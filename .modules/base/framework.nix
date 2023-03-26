@@ -20,29 +20,28 @@
     kernelModules = [ "kvm-intel" ];
     kernelParams = [ "acpi_osi=linux" "module_blacklist=hid_sensor_hub" ];
     extraModulePackages = [ ];
-    kernelPackages = pkgs.linuxPackages_5_18;
+    kernelPackages = pkgs.linuxKernel.kernels.linux_6_2;
     loader = {
       efi.canTouchEfiVariables = true;
       grub = {
         enable = true;
         version = 2;
         efiSupport = true;
-        enableCryptodisk = true;
-        device = "nodev";
+        devices =[ "/dev/nvme0n1" ];
       };
     };
   };
   disko.devices = pkgs.callPackage ../disko/luks-lvm.nix {
-    disks = [ "/dev/nvme" ]; # replace this with your disk name i.e. /dev/nvme0n1
+    disks = [ "/dev/nvme0n1" ]; # replace this with your disk name i.e. /dev/nvme0n1
   };
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp0s13f0u3u2.useDHCP = lib.mkDefault true;
-  # networking.interfaces.wlp166s0.useDHCP = lib.mkDefault true;
   networking.hostName = "creatorforge";
+
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
+  
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
