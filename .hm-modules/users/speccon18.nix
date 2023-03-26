@@ -3,11 +3,11 @@
 {
   home-manager.users.speccon18 = {
     home.packages = [
-      firefox
-      vscodium-fhs
-      alacritty
-      starship
-      diff-so-fancy
+      pkgs.firefox
+      pkgs.vscodium-fhs
+      pkgs.alacritty
+      pkgs.starship
+      pkgs.diff-so-fancy
     ];
   };
   programs = {
