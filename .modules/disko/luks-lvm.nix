@@ -1,6 +1,6 @@
 { disks ? [ "/dev/nvme0n1" ], ... }: {
   disk = {
-    nvme0n1 = {
+    disk-0 = {
       type = "disk";
       device = builtins.elemAt disks 0;
       content = {
@@ -9,6 +9,7 @@
         partitions = [
           {
             type = "partition";
+            extraArgs = "--label nixboot01";
             name = "ESP";
             start = "1MiB";
             end = "100MiB";
@@ -22,19 +23,21 @@
               ];
             };
           }
-#          {
-#            name = "swap";
-#            type = "partition";
-#            start = "101MiB";
-#            end = "40960MiB";
-#            part-type = "primary";
-#            content = {
-#              type = "swap";
-#              randomEncryption = true;
-#            };
-#          }
+          {
+            name = "swap";
+            type = "partition";
+            extraArgs = "--label nixswap01";
+            start = "101MiB";
+            end = "40960MiB";
+            part-type = "primary";
+            content = {
+              type = "swap";
+              randomEncryption = true;
+            };
+          }
           {
             type = "partition";
+            extraArgs = "--label nixpv01";
             name = "luks";
             start = "40960MiB";
             end = "100%";
@@ -59,6 +62,7 @@
       lvs = {
         root = {
           type = "lvm_lv";
+          extraArgs = "--label nixroot";
           size = "128G";
           content = {
             type = "filesystem";
@@ -71,6 +75,7 @@
         };
         home = {
           type = "lvm_lv";
+          extraArgs = "--label nixhome";
           size = "25G";
           content = {
             type = "filesystem";

@@ -32,7 +32,9 @@
       };
     };
   };
-
+  disko.devices = pkgs.callPackage ../disko/luks-lvm.nix {
+    disks = [ "/dev/nvme" ]; # replace this with your disk name i.e. /dev/nvme0n1
+  };
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
