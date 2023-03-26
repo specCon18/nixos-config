@@ -77,10 +77,6 @@
             mountpoint = "/home";
           };
         };
-        raw = {
-          type = "lvm_lv";
-          size = "10M";
-        };
       };
     };
   };
