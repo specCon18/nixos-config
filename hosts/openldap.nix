@@ -3,12 +3,12 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-        # ../.modules/base/hardware.nix
+        # ../modules/base/hardware.nix
         (modulesPath + "/profiles/qemu-guest.nix")
-        ../.modules/services/docker.nix
-        ../.modules/users/arouzing.nix
-        ../.modules/users/speccon18.nix
-        ../.modules/services/openssh.nix
+        ../modules/services/docker.nix
+        ../modules/users/arouzing.nix
+        ../modules/users/speccon18.nix
+        ../modules/services/openssh.nix
     ];
 
     # base packages

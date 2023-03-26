@@ -6,11 +6,6 @@
         nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";
         # NixOS Hardware Configuration for framework #
         nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-# For Wayfire #
-#        nixpkgs-wayland  = {
-#            url = "github:nix-community/nixpkgs-wayland";
-#            inputs.nixpkgs.follows = "nixpkgs";
-#        };
         # For Home Manager #
         home-manager = {
             url = "github:nix-community/home-manager/release-22.11";
@@ -27,7 +22,7 @@
 
     outputs = { self, home-manager, nixos-hardware, disko, nixpkgs, sops-nix, ... }@inputs:
         let
-            system = "x86_64-linux";
+            system = "x86_64-linux"; # Set the system architecture to x86_64-linux.
             pkgs = import nixpkgs {
                 inherit system;
                 config.allowUnfree = true;
@@ -54,10 +49,12 @@
                 #Home manager
                 home-manager.nixosModules.home-manager
                 {
-                    home-manager.useGlobalPkgs = true;
-                    home-manager.useUserPackages = true;
-                    home-manager.users."${userName}" = {
-                        imports = [ (./. + "/users/${userName}/home.nix") ] ++ extraHomeModules;
+                    home-manager = {
+                        useGlobalPkgs = true;
+                        useUserPackages = true;
+                        users."${userName}" = {
+                            imports = [ (./. + "/users/${userName}/home.nix") ] ++ extraHomeModules;
+                        };
                     };
                 }
             ] ++ extraModules;
@@ -70,8 +67,11 @@
                     "speccon18" #default user
                     [
                         ./hosts/creatorforge.nix
-                    ] #modules to load
-                    []; #modules to be loaded by home-manager
+                        modules/services/docker.nix
+                        modules/services/openssh.nix
+                        modules/desktop/gui/gnome.nix
+                    ] #extra modules to load
+                    []; #extra modules to be loaded by home-manager
                 creatorforge-framework = mkComputer
                     ./machines/framework.nix #machine specific configuration
                     "speccon18"  #default user
@@ -79,15 +79,12 @@
                         nixos-hardware.nixosModules.framework-12th-gen-intel
                         disko.nixosModules.disko
                         ./hosts/creatorforge.nix
-                    ] #modules to load
-                    []; #modules to be loaded by home-manager
+                        modules/services/docker.nix
+                        modules/services/openssh.nix
+                        modules/desktop/gui/gnome.nix
+                        
+                    ] #extra modules to load
+                    []; #extra modules to be loaded by home-manager
             };
-            # homeConfigurations = {
-                # speccon18 = home-manager.lib.homeManagerConfiguration {
-                    # pkgs = nixpkgs.legacyPackages.x86_64-linux;
-                    # modules = [ ./.hm-modules/home-manager.nix];
-                # };
-            # };
         };
-
 }
