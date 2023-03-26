@@ -35,7 +35,6 @@
     exa
     zsh
     vim
-    micro
     tailscale
     direnv
     uutils-coreutils

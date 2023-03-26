@@ -19,10 +19,53 @@
     #TODO: https://mipmip.github.io/home-manager-option-search/ add options  
     vscode = {
       enable = true;
+      package = pkgs.vscode.fhs;
       enableExtensionUpdateCheck = true;
       enableUpdateCheck = false;
+      extensions = [
+#        "tlahmann.alex-linter"
+#        "astro-build.astro-vscode"
+#        "aaron-bond.better-comments"
+#        "bungcip.better-toml"
+#        "antfu.browse-lite"
+#        "firefox-devtools.vscode-firefox-debug"
+#        "ms-vscode-remote.remote-containers"
+#        "ms-azuretools.vscode-docker"
+#        "editorconfig.editorconfig"
+#        "dbaeumer.vscode-eslint"
+#        "donjayamanne.githistory"
+#        "felipecaputo.git-project-manager"
+#        "github.copilot"
+#        "eamodio.gitlens"
+#        "graphql.vscode-graphql"
+#        "graphql.vscode-graphql-syntax"
+#        "oderwat.indent-rainbow"
+#        "skellock.just"
+#        "monokai.theme-monokai-pro-vscode"
+#        "bbenoist.nix"
+#        "jnoortheen.nix-ide"
+#        "christian-kohler.path-intellisense"
+#        "csstools.postcss"
+#        "esbenp.prettier-vscode"
+#        "ms-vscode-remote.remote-ssh"
+#        "ms-vscode-remote.remote-ssh-edit"
+#        "ms-vscode.remote-server"
+#        "ms-vscode-remote.vscode-remote-extensionpack"
+#        "ms-vscode.remote-explorer"
+#        "rust-lang.rust-analyzer"
+#        "rhalaly.scope-to-this"
+#        "svelte.svelte-vscode"
+#        "bradlc.vscode-tailwindcss"
+#        "tauri-apps.tauri-vscode"
+#        "antfu.vite"
+#        "zixuanchen.vitest-explorer"
+#        "vscode-icons-team.vscode-icons"
+#        "thenuprojectcontributors.vscode-nushell-lang"
+#        "ms-vscode-remote.remote-wsl"
+#        "redhat.vscode-yaml"
+    ];
     };
-    #Generate and add configs for this
+    #TODO: Generate and add configs for this
     nushell = {
       enable = true;
     };
