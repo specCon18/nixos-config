@@ -14,8 +14,12 @@
             url = "github:nix-community/nixos-generators";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+        disko = {
+            url = "github:nix-community/disko";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
-    outputs = { self, home-manager, nixos-generators, nixpkgs, ... }@inputs:
+    outputs = { self, home-manager, nixos-generators, disko, nixpkgs, ... }@inputs:
     {
         proxmox = nixos-generators.nixosGenerate {
             system = "x86_64-linux";
@@ -28,6 +32,14 @@
             creatorforge-vm = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
                 modules = [
+                    ./hosts/creatorforge.nix
+                    ./.modules/base/proxmox-vm-hardware.nix
+                ];
+            };
+            creatorforge-framework = nixpkgs.lib.nixosSystem {
+                system = "x86_64-linux";
+                modules = [
+                    disko.nixosModules.disko
                     ./hosts/creatorforge.nix
                     ./.modules/base/proxmox-vm-hardware.nix
                 ];
