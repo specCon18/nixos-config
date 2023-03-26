@@ -10,6 +10,7 @@
             url = "github:nix-community/home-manager/release-22.11";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+        nixos-hardware.url = "github:NixOS/nixos-hardware/master";
         nixos-generators = {
             url = "github:nix-community/nixos-generators";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -39,6 +40,7 @@
             creatorforge-framework = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
                 modules = [
+                    nixos-hardware.nixosModules.framework-12th-gen-intel
                     disko.nixosModules.disko
                     ./hosts/creatorforge.nix
                     ./.modules/base/proxmox-vm-hardware.nix

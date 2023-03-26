@@ -10,6 +10,12 @@
     initrd = {
       availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod" ]; 
       kernelModules = [ "dm-snapshot" ];
+      luks.devices = {
+        crypted = {
+          device = "";
+          preLVM = true;
+        };
+      };
     };
     kernelModules = [ "kvm-intel" ];
     kernelParams = [ "acpi_osi=linux" "module_blacklist=hid_sensor_hub" ];
@@ -26,7 +32,7 @@
       };
     };
   };
-  
+
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
