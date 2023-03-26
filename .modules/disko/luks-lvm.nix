@@ -58,7 +58,6 @@
       lvs = {
         root = {
           type = "lvm_lv";
-          extraArgs = ["--label nixroot"];
           size = "128G";
           content = {
             type = "filesystem";
@@ -71,7 +70,6 @@
         };
         home = {
           type = "lvm_lv";
-          extraArgs = ["--label nixhome"];
           size = "25G";
           content = {
             type = "filesystem";
