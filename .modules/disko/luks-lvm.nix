@@ -11,7 +11,7 @@
             type = "partition";
             name = "ESP";
             start = "1MiB";
-            end = "100MiB";
+            end = "2g";
             bootable = true;
             content = {
               type = "filesystem";
@@ -25,8 +25,8 @@
           {
             name = "swap";
             type = "partition";
-            start = "101MiB";
-            end = "40960MiB";
+            start = "2G";
+            end = "40G";
             part-type = "primary";
             content = {
               type = "swap";
@@ -36,7 +36,7 @@
           {
             type = "partition";
             name = "luks";
-            start = "40960MiB";
+            start = "40G";
             end = "100%";
             content = {
               type = "luks";
