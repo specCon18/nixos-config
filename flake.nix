@@ -1,6 +1,7 @@
 {
     inputs = {
         nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";
+        nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 # For Wayfire #
 #        nixpkgs-wayland  = { 
 #            url = "github:nix-community/nixpkgs-wayland"; 
@@ -10,7 +11,6 @@
             url = "github:nix-community/home-manager/release-22.11";
             inputs.nixpkgs.follows = "nixpkgs";
         };
-        nixos-hardware.url = "github:NixOS/nixos-hardware/master";
         nixos-generators = {
             url = "github:nix-community/nixos-generators";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -49,9 +49,8 @@
                 ];
             };
         };
-        homeManagerConfiguration = {
+        homeConfigurations = {
             speccon18 = home-manager.lib.homeManagerConfiguration {
-                pkgs = nixpkgs.legacyPackages.x86_64-linux;
                 modules = [ ./hm-modules/home-manager.nix];
                 # username = "speccon18";
                 # homeDirectory = "/home/speccon18";
