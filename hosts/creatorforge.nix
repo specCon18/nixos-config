@@ -8,7 +8,6 @@
     ../.modules/users/speccon18.nix
     ../.modules/services/openssh.nix
     ../.modules/features/desktop/environments/gnome.nix
-    ../.modules/features/desktop/applications/speccon18.nix
   ];
   # Allow non opensource software to be installed
   nixpkgs.config.allowUnfree = true;
