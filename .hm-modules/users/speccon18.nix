@@ -1,16 +1,16 @@
 { config, pkgs, lib, ... }:
 
 {
-  home-manager.users.speccon18 = {
-    home.packages = [
-      pkgs.firefox
-      pkgs.vscodium-fhs
-      pkgs.alacritty
-      pkgs.starship
-      pkgs.diff-so-fancy
-    ];
-  };
   programs = {
+    home-manager.users.speccon18 = {
+      home.packages = [
+        pkgs.firefox
+        pkgs.vscodium-fhs
+        pkgs.alacritty
+        pkgs.starship
+        pkgs.diff-so-fancy
+      ];
+    };
     home = {
       username = "speccon18";
       homeDirectory = "/home/speccon18";
