@@ -22,8 +22,7 @@
     };
     outputs = { self, home-manager, nixos-generators, nixos-hardware, disko, nixpkgs, ... }@inputs:
     {
-        defaultPackage.x86_64-linux = home-manager.defaultPackage.x86_64-linux;
-    
+        defaultPackage.x86_64-linux = home-manager.defaultPackage.x86_64-linux;            
         proxmox = nixos-generators.nixosGenerate {
             system = "x86_64-linux";
             modules = [
@@ -51,7 +50,7 @@
         };
         homeConfigurations = {
             speccon18 = home-manager.lib.homeManagerConfiguration {
-                pkgs = nixpkgs.legacyPackages.x86_64-linux;
+                pkgs = nixpkgs.legacyPackages.x86_64-linux;                
                 modules = [ ./.hm-modules/home-manager.nix];
                 # username = "speccon18";
                 # homeDirectory = "/home/speccon18";

@@ -7,7 +7,7 @@
     stateVersion = "22.11";
     packages = [
       pkgs.firefox
-      pkgs.vscodium-fhs
+      pkgs.vscode-fhs
       pkgs.alacritty
       pkgs.starship
       pkgs.diff-so-fancy
@@ -16,6 +16,12 @@
     ];
   };
   programs = {
+    #TODO: https://mipmip.github.io/home-manager-option-search/ add options  
+    vscode = {
+      enable = true;
+      enableExtensionUpdateCheck = true;
+      enableUpdateCheck = false;
+    };
     #Generate and add configs for this
     nushell = {
       enable = true;
