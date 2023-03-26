@@ -67,9 +67,9 @@
                     "speccon18" #default user
                     [
                         ./hosts/creatorforge.nix
-                        modules/services/docker.nix
-                        modules/services/openssh.nix
-                        modules/desktop/gui/gnome.nix
+                        ./modules/services/docker.nix
+                        ./modules/services/openssh.nix
+                        ./modules/desktop/gui/gnome.nix
                     ] #extra modules to load
                     []; #extra modules to be loaded by home-manager
                 creatorforge-framework = mkComputer
@@ -79,9 +79,9 @@
                         nixos-hardware.nixosModules.framework-12th-gen-intel
                         disko.nixosModules.disko
                         ./hosts/creatorforge.nix
-                        modules/services/docker.nix
-                        modules/services/openssh.nix
-                        modules/desktop/gui/gnome.nix
+                        ./modules/services/docker.nix
+                        ./modules/services/openssh.nix
+                        ./modules/desktop/gui/gnome.nix
                         
                     ] #extra modules to load
                     []; #extra modules to be loaded by home-manager
