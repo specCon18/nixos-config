@@ -1,6 +1,6 @@
 { disks ? [ "/dev/nvme0n1" ], ... }: {
   disk = {
-    nvme0n1p1 = {
+    nvme0n1 = {
       type = "disk";
       device = builtins.elemAt disks 0;
       content = {
@@ -22,6 +22,17 @@
               ];
             };
           }
+#          {
+#            name = "swap";
+#            type = "partition";
+#            start = "101MiB";
+#            end = "40960MiB";
+#            part-type = "primary";
+#            content = {
+#              type = "swap";
+#              randomEncryption = true;
+#            };
+#          }
           {
             type = "partition";
             name = "luks";
