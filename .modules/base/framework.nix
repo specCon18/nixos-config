@@ -23,7 +23,7 @@
     kernelModules = [ "kvm-intel" ];
     kernelParams = [ "acpi_osi=linux" ];
     extraModulePackages = [ ];
-    kernelPackages = pkgs.linuxKernel.kernels.linux_6_2;
+    kernelPackages = lib.mkOverride pkgs.linuxKernel.kernels.linux_6_2;
     loader = {
       efi.canTouchEfiVariables = true;
       grub = {
