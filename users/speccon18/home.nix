@@ -1,6 +1,6 @@
 { pkgs, config, lib, ... }: {
 #Home manager configuration
-imports = [ ./../../home ./../../home/nixos ];
+#imports = [ ./../../home ./../../home/nixos ];
   
   home = {
     username = "speccon18";
