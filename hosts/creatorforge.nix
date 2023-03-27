@@ -46,7 +46,6 @@
       allowedUDPPorts = [];
       checkReversePath = "loose";
     };
-    # networkmanager.enable = true;
   };
 
   services.tailscale.enable = true;

@@ -1,9 +1,7 @@
 { modulesPath, config, pkgs, lib, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-        # ../modules/base/hardware.nix
+  imports = [
         (modulesPath + "/profiles/qemu-guest.nix")
         ../modules/services/docker.nix
         ../modules/users/arouzing.nix
@@ -20,27 +18,25 @@
     ];
 
   networking = {
-    firewall.checkReversePath = "loose";
     hostName = "openldap"; # Define your hostname.
+    firewall = { 
+      enable = true;
+      allowedTCPPorts = [];
+      allowedUDPPorts = [];
+      checkReversePath = "loose";
+    };
     # networkmanager.enable = true;
   };
 
   services.tailscale.enable = true;
 
-  time.timeZone = "America/New_York";
+  time.timeZone = "America/Detroit";
 
-  # Open ports in the firewall.
-  networking.firewall = { 
-    enable = true;
-    allowedTCPPorts = [];
-    allowedUDPPorts = [];
-  };
   ## main services
   system.stateVersion = "22.11";
 
   ### testing ###
-  boot.initrd.availableKernelModules =
-    [ "ata_piix" "uhci_hcd" "virtio_pci" "sr_mod" "virtio_blk" ];
+  boot.initrd.availableKernelModules = [ "ata_piix" "uhci_hcd" "virtio_pci" "sr_mod" "virtio_blk" ];
   
 
 }
