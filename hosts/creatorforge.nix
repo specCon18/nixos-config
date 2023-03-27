@@ -33,6 +33,7 @@
     tailscale
     dig
     rage
+    age-plugin-yubikey
     sops
     direnv
     htop
