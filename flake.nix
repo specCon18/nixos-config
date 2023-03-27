@@ -30,7 +30,7 @@
 
             defaultPackage.x86_64-linux = home-manager.defaultPackage.x86_64-linux;
             defaultNixOptions = {
-                nix.autoOptimiseStore = true;
+                nix.settings.autoOptimiseStore = true;
             };
         mkComputer = configurationNix: userName: extraModules: extraHomeModules: inputs.nixpkgs.lib.nixosSystem {
             inherit system;
