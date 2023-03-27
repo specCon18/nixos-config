@@ -50,7 +50,7 @@
     direnv = {
       enable = true;
       enableZshIntegration = lib.mkDefault true;
-      enableNushellIntegration = true;
+      #enableNushellIntegration = true;
     };
     home-manager = {
       enable = true;
