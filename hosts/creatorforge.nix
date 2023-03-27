@@ -40,6 +40,7 @@
 
   networking = {
     hostName = "creatorforge"; # Define your hostname.
+    useDHCP = true;
     firewall = {
       enable = true;
       allowedTCPPorts = [];
@@ -47,6 +48,4 @@
       checkReversePath = "loose";
     };
   };
-
-  services.tailscale.enable = true;
 }

@@ -7,7 +7,6 @@
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
-
   boot = {
     initrd = {
       availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod" ]; 
@@ -22,17 +21,19 @@
     kernelModules = [ "kvm-intel" ];
     kernelParams = [ "acpi_osi=linux" ];
     extraModulePackages = [ ];
-    # kernelPackages = lib.mkOverride pkgs.linuxPackages_latest; #pkgs.linuxKernel.kernels.linux_6_2;
     loader = {
       efi.canTouchEfiVariables = true;
-      systemd-boot.enable = true; 
+      systemd-boot = {
+          enable = true;
+          configurationLimit = 10;
+        }; 
     };
   };
+
   disko.devices = import ../modules/disko/luks-lvm.nix {
     disks = [ "/dev/nvme0n1" ];
   };
-  networking.useDHCP = lib.mkDefault true;
-  
+    
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   
 }
