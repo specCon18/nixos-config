@@ -5,7 +5,6 @@
 
 {
   imports = [
-    ../modules/disko/luks-lvm.nix
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
@@ -27,17 +26,9 @@
     loader = {
       efi.canTouchEfiVariables = true;
       systemd-boot.enable = true; 
-      # grub = {
-      #   enable = true;
-      #   version = 2;
-      #   efiSupport = true;
-      #   efiInstallAsRemovable = true;
-      #   device = "/dev/nvme0n1" ;
-      # };
     };
   };
-  disko.devices = import ../disko/luks-lvm.nix {
-#    lib = nixpkgs.lib;
+  disko.devices = import ../modules/disko/luks-lvm.nix {
     disks = [ "/dev/nvme0n1" ];
   };
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
