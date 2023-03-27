@@ -40,7 +40,7 @@
 
   networking = {
     hostName = "creatorforge"; # Define your hostname.
-    useDHCP = true;
+    useDHCP = lib.mkForce true;
     firewall = {
       enable = true;
       allowedTCPPorts = [];
