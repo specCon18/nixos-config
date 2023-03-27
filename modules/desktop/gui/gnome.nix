@@ -4,6 +4,8 @@
   environment.systemPackages = with pkgs; [
     gnomeExtensions.dock-from-dash
     gnomeExtensions.pop-shell
+#    gnomeExtensions.gtile
+    gnome.gnome-tweaks
   ];
   services = {
     gnome = {
