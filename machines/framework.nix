@@ -5,7 +5,7 @@
 
 {
   imports = [
-    # ../disko/luks-lvm.nix
+    ../modules/disko/luks-lvm.nix
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
@@ -38,7 +38,7 @@
   };
   disko.devices = import ../disko/luks-lvm.nix {
 #    lib = nixpkgs.lib;
-    disks = [ "/dev/nvme0n1" ]; # replace this with your disk name i.e. /dev/nvme0n1
+    disks = [ "/dev/nvme0n1" ];
   };
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
