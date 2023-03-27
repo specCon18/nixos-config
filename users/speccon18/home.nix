@@ -5,6 +5,8 @@
     stateVersion = "22.11";
     packages = with pkgs; [
       nushell
+      cargo
+      rustc
       bitwarden
       firefox
       discord
