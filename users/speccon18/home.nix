@@ -1,4 +1,5 @@
-{ pkgs, config, lib, ... }: {  
+{ pkgs, config, lib, ... }:
+{  
   home = {
     username = "speccon18";
     homeDirectory = "/home/speccon18";
@@ -16,6 +17,7 @@
       asciinema
       postman
       gimp
+      obsidian
       neofetch
       vlc
       remmina
@@ -99,28 +101,6 @@
         "editor.inlineSuggest.enabled" = true;
         "window.zoomLevel" = 1;
       };
-      languageSnippets = {
-        svelte = {
-          scaffold = {
-              description = "scaffold a file";
-              "prefix" = "!S";
-              "body" = [
-                "<script lang=\"ts\">"
-                ""
-                "</script>"
-                ""
-                "<section>"
-                ""
-                "</section>"
-                ""
-                "<style lang=\"postcss\">"
-                ""
-                "</style>"
-              ];
-            };
-          };
-        };
-      };
     };
     git = {
       enable = true;
@@ -132,12 +112,15 @@
         };
       };
     };
-
-    dconf = {
-      enable = true;
-      settings = {
-        "org/gnome/mutter" = {
-          experimental-features = [ "x11-randr-fractional-scaling" "scale-monitor-framebuffer" ];
+  };
+  dconf = {
+    enable = true;
+    settings = {
+      "org/gnome/mutter" = {
+          experimental-features = [
+            "x11-randr-fractional-scaling"
+            "scale-monitor-framebuffer"
+          ];
       };
     };
   };

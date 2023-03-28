@@ -1,4 +1,4 @@
-{ modulesPath, config, pkgs, lib, ... }:
+{ modulesPath, config, pkgs, lib, self, ... }:
 
 {
   system.stateVersion = "22.11";  
@@ -39,7 +39,8 @@
     age-plugin-yubikey #plugin for rage to manage yubi-2fa
     sops #file based secrets operations
     direnv #used for development environments
-  ];
+  
+  ] ++ [self.inputs.devenv.packages.x86_64-linux.devenv];
 
   networking = {
     hostName = "creatorforge"; # Define your hostname.

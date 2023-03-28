@@ -18,27 +18,27 @@
         };
         # For Secrets Management #
         sops-nix.url = github:Mic92/sops-nix;
+
+        devenv.url = "github:cachix/devenv/latest";
     };
 
-    outputs = { self, home-manager, nixos-hardware, disko, nixpkgs, sops-nix, ... }@inputs:
+    outputs = { self, home-manager, nixos-hardware, disko, nixpkgs, sops-nix, devenv, ... }@inputs:
         let
-            system = "x86_64-linux"; # Set the system architecture to x86_64-linux.
+            system = "x86_64-linux";
             pkgs = import nixpkgs {
                 inherit system;
                 config.allowUnfree = true;
             };
-
-            defaultPackage.x86_64-linux = home-manager.defaultPackage.x86_64-linux;
+            defaultPackage.system = home-manager.defaultPackage.x86_64-linux;
             defaultNixOptions = {
                 nix.settings.auto-optimise-store = true;
             };
         mkComputer = configurationNix: userName: extraModules: extraHomeModules: inputs.nixpkgs.lib.nixosSystem {
             inherit system;
-            specialArgs = { inherit system inputs pkgs nixos-hardware; };
+            specialArgs = { inherit system inputs self pkgs nixos-hardware; };
             modules = [
                 #Secrets management
                 sops-nix.nixosModules.sops
-
                 #Machine config
                 configurationNix
                 defaultNixOptions
@@ -56,6 +56,7 @@
                             imports = [ (./. + "/users/${userName}/home.nix") ] ++ extraHomeModules;
                         };
                     };
+                    
                 }
             ] ++ extraModules;
         };
@@ -87,4 +88,5 @@
                     []; #extra modules to be loaded by home-manager
             };
         };
+
 }
