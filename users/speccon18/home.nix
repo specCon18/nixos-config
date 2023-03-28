@@ -5,8 +5,6 @@
     stateVersion = "22.11";
     packages = with pkgs; [
       nushell
-      cargo
-      rustc
       bitwarden
       firefox
       discord
@@ -18,25 +16,23 @@
       asciinema
       postman
       gimp
-      rustup
       neofetch
       vlc
       remmina
       signal-desktop
       starship
       alacritty
-      uutils-coreutils
     ];
   };
 
   programs = {
     nushell = {
-      enable = true;
+      enable = false;
     };
     starship = {
       enable = true;
       enableZshIntegration = true;
-      enableNushellIntegration = true;
+      enableNushellIntegration = false;
     };
     zsh = {
       enable = lib.mkDefault true;
@@ -79,7 +75,30 @@
         svelte.svelte-vscode
         bradlc.vscode-tailwindcss
         thenuprojectcontributors.vscode-nushell-lang
+        matklad.rust-analyzer
       ];
+      userSettings = {
+        "workbench.colorTheme" = "Monokai Pro (Filter Octagon)";
+        "workbench.startupEditor" = "none";
+        "workbench.iconTheme" = "vscode-icons";
+        "git.autofetch" = true;
+        "redhat.telemetry.enabled" = false;
+        "svelte.enable-ts-plugin" = true;
+        "window.menuBarVisibility" = "compact";
+        "prettier.singleQuote" = true;
+        "prettier.useTabs" = true;
+        "prettier.bracketSpacing" = false;
+        "prettier.htmlWhitespaceSensitivity" = "strict";
+        "typescript.updateImportsOnFileMove.enabled" = "always";
+        "editor.fontFamily" = "OpenDyslexic, OpenDyslexic Mono NF";
+        "rust-analyzer.inlayHints.chainingHints.enable" = false;
+        "rust-analyzer.inlayHints.closingBraceHints.enable" = false;
+        "rust-analyzer.inlayHints.renderColons" = false;
+        "rust-analyzer.inlayHints.parameterHints.enable" = false;
+        "editor.minimap.enabled" = false;
+        "editor.inlineSuggest.enabled" = true;
+        "window.zoomLevel" = 1;
+      };
     };
     git = {
       enable = true;
@@ -93,9 +112,13 @@
     };
   };
 
-  dconf.settings = {
-    "org/gnome/mutter" = {
-      experimental-features = [ "x11-randr-fractional-scaling" "scale-monitor-framebuffer" ];
+  dconf = {
+    enable = true;
+    settings = {
+      "org/gnome/mutter" = {
+        experimental-features = [ "x11-randr-fractional-scaling" "scale-monitor-framebuffer" ];
     };
+  };
+
   };
 }

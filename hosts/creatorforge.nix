@@ -25,18 +25,20 @@
   };
   # base packages
   environment.systemPackages = with pkgs; [
-    htop
+    cargo
+    rustc
+    helix
     bat
     exa
-    helix
+    uutils-coreutils
+    htop
     zsh
     tailscale
-    dig
-    rage
-    age-plugin-yubikey
-    sops
-    direnv
-    htop
+    dig #dns lookup
+    rage #file encryption
+    age-plugin-yubikey #plugin for rage to manage yubi-2fa
+    sops #file based secrets operations
+    direnv #used for development environments
   ];
 
   networking = {
