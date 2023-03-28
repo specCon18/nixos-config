@@ -80,7 +80,7 @@
       userSettings = {
         "workbench.colorTheme" = "Monokai Pro (Filter Octagon)";
         "workbench.startupEditor" = "none";
-        "workbench.iconTheme" = "vscode-icons";
+        "workbench.iconTheme" = "Monokai Pro Icons";
         "git.autofetch" = true;
         "redhat.telemetry.enabled" = false;
         "svelte.enable-ts-plugin" = true;
@@ -99,6 +99,28 @@
         "editor.inlineSuggest.enabled" = true;
         "window.zoomLevel" = 1;
       };
+      languageSnippets = {
+        svelte = {
+          scaffold = {
+              description = "scaffold a file";
+              "prefix" = "!S";
+              "body" = [
+                "<script lang=\"ts\">"
+                ""
+                "</script>"
+                ""
+                "<section>"
+                ""
+                "</section>"
+                ""
+                "<style lang=\"postcss\">"
+                ""
+                "</style>"
+              ];
+            };
+          };
+        };
+      };
     };
     git = {
       enable = true;
@@ -110,15 +132,13 @@
         };
       };
     };
-  };
 
-  dconf = {
-    enable = true;
-    settings = {
-      "org/gnome/mutter" = {
-        experimental-features = [ "x11-randr-fractional-scaling" "scale-monitor-framebuffer" ];
+    dconf = {
+      enable = true;
+      settings = {
+        "org/gnome/mutter" = {
+          experimental-features = [ "x11-randr-fractional-scaling" "scale-monitor-framebuffer" ];
+      };
     };
-  };
-
   };
 }
