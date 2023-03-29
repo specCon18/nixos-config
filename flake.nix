@@ -19,6 +19,7 @@
         # For Secrets Management #
         sops-nix.url = github:Mic92/sops-nix;
 
+        # For Dev Env https://devenv.sh #
         devenv.url = "github:cachix/devenv/latest";
     };
 
