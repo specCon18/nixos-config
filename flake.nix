@@ -88,6 +88,11 @@
                     ] #extra modules to load
                     []; #extra modules to be loaded by home-manager
             };
+            packages.${system} = {
+                dconfnixdump = pkgs.writeScriptBin "deconfnixdump"''
+                    dconf dump / | dconf2nix > dconf.nix
+                '';
+            };
         };
 
 }

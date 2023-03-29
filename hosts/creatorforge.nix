@@ -26,6 +26,7 @@
   # base packages
   environment.systemPackages = with pkgs; [
     cargo
+    dconf2nix
     rustc
     helix
     bat
