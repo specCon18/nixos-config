@@ -28,7 +28,6 @@
     cargo
     dconf2nix
     rustc
-    helix
     bat
     exa
     uutils-coreutils

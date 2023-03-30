@@ -5,6 +5,7 @@
     homeDirectory = "/home/speccon18";
     stateVersion = "22.11";
     packages = with pkgs; [
+      w3m
       nushell
       bitwarden
       firefox
@@ -174,6 +175,13 @@
         "editor.minimap.enabled" = false;
         "editor.inlineSuggest.enabled" = true;
         "window.zoomLevel" = 1;
+      };
+    };
+    helix = {
+      enable = true;
+      settings = {
+        editor.line-number = "relative";
+        editor.shell = ["zsh" "-c"];
       };
     };
     git = {
