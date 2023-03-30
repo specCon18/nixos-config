@@ -118,6 +118,20 @@
         path = "$ZDOTDIR/.zsh_history";
         save = 10000000;
       };
+      enableAutosuggestions = lib.mkDefault true;
+      enableCompletion = lib.mkDefault true;
+      enableSyntaxHighlighting = lib.mkDefault true;
+      shellAliases = {
+        ls = "exa -l";
+        lsa = "exa -al";
+        cd = "z";
+        osrb = "sudo nixos-rebuild $1 ~/nixos-config/#creatorforge-framework";
+        zel = "zellij -s";
+        ns = "nix-shell";
+        top = "btm";
+        hx = "hx .";
+        cat = "bat";
+      };
     };
     direnv = {
       enable = true;
