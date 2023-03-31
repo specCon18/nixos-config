@@ -29,6 +29,8 @@
       alacritty
       ncspot
       bacon
+      bottom
+      xplr
     ];
   };
   
@@ -129,7 +131,7 @@
         zel = "zellij -s";
         ns = "nix-shell";
         top = "btm";
-        hx = "hx .";
+        hx = "hx";
         cat = "bat";
       };
     };
