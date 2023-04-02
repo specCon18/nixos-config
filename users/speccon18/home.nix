@@ -5,6 +5,7 @@
     homeDirectory = "/home/speccon18";
     stateVersion = "22.11";
     packages = with pkgs; [
+      mdbook
       w3m
       nushell
       bitwarden
@@ -31,6 +32,7 @@
       bacon
       bottom
       xplr
+      broot
     ];
   };
   
@@ -127,12 +129,15 @@
         ls = "exa -l";
         lsa = "exa -al";
         cd = "z";
-        osrb = "sudo nixos-rebuild $1 ~/nixos-config/#creatorforge-framework";
+        osrb = "sudo nixos-rebuild $1 --flake ~/code/nix/nixos-config/#creatorforge-framework";
         zel = "zellij -s";
         ns = "nix-shell";
         top = "btm";
         hx = "hx";
         cat = "bat";
+      };
+      localVariables = {
+        EDITOR="hx";
       };
     };
     direnv = {

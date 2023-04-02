@@ -4,7 +4,6 @@
   environment.systemPackages = with pkgs; [
     gnomeExtensions.dock-from-dash
     gnomeExtensions.pop-shell
-#    gnomeExtensions.gtile
     gnome.gnome-tweaks
   ];
   services = {
@@ -25,7 +24,7 @@
           defaultSession = lib.mkDefault "gnome";
         };
       desktopManager = {
-        xterm.enable = lib.mkForce false;
+        xterm.enable = false;
         gnome.enable = lib.mkDefault true;
       };
     };
@@ -35,6 +34,11 @@
     xwayland.enable = lib.mkDefault true;
   };
   
-  xdg.portal = { enable = lib.mkDefault true; };
+  xdg= {
+    portal = { enable = lib.mkDefault true; };
+    mime.defaultApplications = {
+      "text/markdown" = "hx"
+    };
+  };
 
 }
