@@ -26,10 +26,17 @@
   # base packages
   environment.systemPackages = with pkgs; [
     cargo
+    feh
+    unrar
+    unzip
+    gzip
+    p7zip
+    bzip2
     dconf2nix
     rustc
     bat
     exa
+    mdbook
     uutils-coreutils
     htop
     zsh
@@ -39,7 +46,7 @@
     age-plugin-yubikey #plugin for rage to manage yubi-2fa
     sops #file based secrets operations
     direnv #used for development environments
-  
+    python39  
   ] ++ [self.inputs.devenv.packages.x86_64-linux.devenv];
 
   networking = {

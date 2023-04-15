@@ -5,7 +5,9 @@
     homeDirectory = "/home/speccon18";
     stateVersion = "22.11";
     packages = with pkgs; [
-      mdbook
+      freecad
+      prismlauncher
+      calibre
       w3m
       nushell
       bitwarden
@@ -135,6 +137,7 @@
         top = "btm";
         hx = "hx";
         cat = "bat";
+        extract = "~/.config/zsh/extract.sh";
       };
       localVariables = {
         EDITOR="hx";
@@ -223,7 +226,7 @@
           base8    = "#eaf2f1";
           base8x0c = "#303342";
         in {
-            "ui.linenr.selected" = { bg = base3; };
+          "ui.linenr.selected" = { bg = base3; };
           "ui.text.focus" = { fg = yellow; modifiers = ["bold"]; };
           "ui.menu" = { fg = base8; bg = base3; };
           "ui.menu.selected" = { fg = base2; bg = yellow; };

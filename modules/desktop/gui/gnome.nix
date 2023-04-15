@@ -37,7 +37,7 @@
   xdg= {
     portal = { enable = lib.mkDefault true; };
     mime.defaultApplications = {
-      "text/markdown" = "hx"
+      "text/markdown" = "hx";
     };
   };
 
