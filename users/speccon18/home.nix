@@ -204,11 +204,12 @@
     helix = {
       enable = true;
       settings = {
+        theme = "monokai_pro_octagon";
         editor.line-number = "relative";
         editor.shell = ["zsh" "-c"];
       };
       themes = {
-        monokai_pro_octagon.toml = let
+        monokai_pro_octagon = let
           red      = "#ff657a";
           orange   = "#ff9b5e";
           yellow   = "#ffd76d";
