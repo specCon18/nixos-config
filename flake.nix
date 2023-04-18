@@ -91,6 +91,7 @@
                         ./modules/home-manager/alacritty.nix
                         ./modules/home-manager/vscode.nix
                         ./modules/home-manager/zsh.nix
+                        ./modules/home-manager/git.nix
                     ]; #extra modules to be loaded by home-manager
             };
         };

@@ -1,6 +1,6 @@
 { pkgs, config, lib, ...}:
 {
-      programs.zsh = {
+  programs.zsh = {
       enable = lib.mkDefault true;
       dotDir = ".config/zsh";
       history = {
