@@ -25,6 +25,7 @@
   };
   # base packages
   environment.systemPackages = with pkgs; [
+    ripgrep
     tree
     cargo
     feh
