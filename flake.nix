@@ -2,28 +2,22 @@
     description = "respec's nixos configs";
 
     inputs = {
-        # For NixOS #
         nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";
-        # NixOS Hardware Configuration for framework #
         nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-        # For Home Manager #
+        sops-nix.url = github:Mic92/sops-nix;
+        devenv.url = "github:cachix/devenv/latest";
+        hyprland.url = "github:hyprwm/Hyprland";
         home-manager = {
             url = "github:nix-community/home-manager/release-22.11";
             inputs.nixpkgs.follows = "nixpkgs";
         };
-        # For Disko Disk Provisioning #
         disko = {
             url = "github:nix-community/disko";
             inputs.nixpkgs.follows = "nixpkgs";
         };
-        # For Secrets Management #
-        sops-nix.url = github:Mic92/sops-nix;
-
-        # For Dev Env https://devenv.sh #
-        devenv.url = "github:cachix/devenv/latest";
     };
 
-    outputs = { self, home-manager, nixos-hardware, disko, nixpkgs, sops-nix, devenv, ... }@inputs:
+    outputs = { self, home-manager, nixos-hardware, disko, nixpkgs, sops-nix, devenv, hyprland, ... }@inputs:
         let
             system = "x86_64-linux";
             pkgs = import nixpkgs {
@@ -80,15 +74,20 @@
                     [
                         nixos-hardware.nixosModules.framework-12th-gen-intel
                         disko.nixosModules.disko
+                        hyprland.nixosModules.default
+                        {programs.hyprland.enable = true;}
                         ./hosts/creatorforge/creatorforge.nix
                         ./hosts/creatorforge/networkd.nix
                         ./hosts/creatorforge/system-pkgs.nix
                         ./modules/system/services/docker.nix
                         ./modules/system/services/openssh.nix
                         ./modules/system/desktop-environments/gnome.nix
+                        ./modules/system/desktop-environments/hyprland.nix
                         
                     ] #extra modules to load
                     [
+                        hyprland.homeManagerModules.default
+                        ./modules/home-manager/hyprland.nix
                         ./modules/home-manager/helix.nix
                         ./modules/home-manager/alacritty.nix
                         ./modules/home-manager/vscode.nix

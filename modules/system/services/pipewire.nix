@@ -1,6 +1,10 @@
 # https://nixos.wiki/wiki/PipeWire
 { config, pkgs, lib, ... }:
 {
+    environment.systemPackages = with pkgs; [
+      pipewire
+      wireplumber      
+    ];
     # rtkit is optional but recommended
     security.rtkit.enable = true;
     services.pipewire = {
