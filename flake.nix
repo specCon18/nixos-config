@@ -86,7 +86,9 @@
                         ./modules/system/desktop-environments/gnome.nix
                         
                     ] #extra modules to load
-                    []; #extra modules to be loaded by home-manager
+                    [
+                        ./modules/home-manager/helix.nix
+                    ]; #extra modules to be loaded by home-manager
             };
             packages.${system} = {
                 dconfnixdump = pkgs.writeScriptBin "deconfnixdump"''
