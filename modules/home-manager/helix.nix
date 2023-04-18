@@ -18,8 +18,26 @@
     enable = true;
     settings = {
       theme = "monokai_pro_octagon";
-      editor.line-number = "relative";
-      editor.shell = ["zsh" "-c"];
+      editor = {
+        line-number = "relative";
+        shell = ["zsh" "-c"];
+        completion-trigger-len = 0;
+        scroll-lines = 1;
+        scrolloff = 5;
+        cursorline = true;
+        color-modes = true;
+        indent-guides.render = true;
+        file-picker.hidden = false;
+        auto-pairs = true;
+        lsp = {
+          display-messages = true;
+        };
+        statusline = {
+          left = [ "mode" "spinner" "file-name" ];
+          right = [ "diagnostics" "position" "file-encoding" ];
+        };
+      };
+
     };
     themes = {
       monokai_pro_octagon = let
