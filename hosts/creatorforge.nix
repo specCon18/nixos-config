@@ -28,6 +28,7 @@
     cargo
     feh
     unrar
+    niv
     unzip
     gzip
     p7zip

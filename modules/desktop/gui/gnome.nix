@@ -5,6 +5,7 @@
     gnomeExtensions.dock-from-dash
     gnomeExtensions.pop-shell
     gnome.gnome-tweaks
+    gnome-extension-manager
   ];
   services = {
     gnome = {

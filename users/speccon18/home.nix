@@ -5,6 +5,7 @@
     homeDirectory = "/home/speccon18";
     stateVersion = "22.11";
     packages = with pkgs; [
+      inkscape
       freecad
       prismlauncher
       calibre
@@ -29,6 +30,7 @@
       remmina
       signal-desktop
       starship
+      just
       alacritty
       ncspot
       bacon
