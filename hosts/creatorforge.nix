@@ -25,6 +25,7 @@
   };
   # base packages
   environment.systemPackages = with pkgs; [
+    tree
     cargo
     feh
     unrar
