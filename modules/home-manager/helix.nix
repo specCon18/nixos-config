@@ -1,5 +1,19 @@
 { pkgs, config, lib, ...}:
 {
+  home.packages = with pkgs; [
+    nodePackages_latest.yaml-language-server
+    nodePackages_latest.bash-language-server
+    nodePackages_latest.vscode-langservers-extracted
+    nodePackages_latest.dockerfile-language-server-nodejs
+    nodePackages_latest.typescript
+    nodePackages_latest.typescript-language-server
+    nodePackages_latest.svelte-language-server
+    nodePackages_latest.vls
+    python39Packages.python-lsp-server
+    rnix-lsp
+    rust-analyzer
+    taplo
+  ];
   programs.helix = {
     enable = true;
     settings = {
@@ -26,7 +40,22 @@
         base8    = "#eaf2f1";
         base8x0c = "#303342";
       in {
-        "ui.linenr.selected" = { bg = base3; };          "ui.text.focus" = { fg = yellow; modifiers = ["bold"]; };          "ui.menu" = { fg = base8; bg = base3; };          "ui.menu.selected" = { fg = base2; bg = yellow; };          "ui.virtual.whitespace" = base5;          "ui.virtual.ruler" = { bg = base1; };          "info" = base8;          "hint" = base8;          "ui.background" = {};          "ui.statusline.inactive" = { fg = base8; bg = base8x0c; };          "ui.statusline" = { fg = base8; bg = base4; };          "ui.statusline.normal" = { fg = base4; bg = blue; };          "ui.statusline.insert" = { fg = base4; bg = green; };          "ui.statusline.select" = { fg = base4; bg = purple; };          "ui.popup" = { bg = base3; };          "ui.window" = { bg = base3; };
+        "ui.linenr.selected" = { bg = base3; };
+        "ui.text.focus" = { fg = yellow; modifiers = ["bold"]; };
+        "ui.menu" = { fg = base8; bg = base3; };
+        "ui.menu.selected" = { fg = base2; bg = yellow; };
+        "ui.virtual.whitespace" = base5;
+        "ui.virtual.ruler" = { bg = base1; };
+        "info" = base8;
+        "hint" = base8;
+        "ui.background" = {};
+        "ui.statusline.inactive" = { fg = base8; bg = base8x0c; };
+        "ui.statusline" = { fg = base8; bg = base4; };
+        "ui.statusline.normal" = { fg = base4; bg = blue; };
+        "ui.statusline.insert" = { fg = base4; bg = green; };
+        "ui.statusline.select" = { fg = base4; bg = purple; };
+        "ui.popup" = { bg = base3; };
+        "ui.window" = { bg = base3; };
         "ui.help" = { fg = base8; bg = base3; };
         "ui.selection" = { bg = base4; };
         "ui.cursor.match" = { bg = base4; };

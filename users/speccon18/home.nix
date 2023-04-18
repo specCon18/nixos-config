@@ -28,7 +28,6 @@
       just
       bacon
       bottom
-      xplr
       broot
     ];
   };  
