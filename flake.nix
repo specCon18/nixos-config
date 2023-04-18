@@ -80,7 +80,9 @@
                     [
                         nixos-hardware.nixosModules.framework-12th-gen-intel
                         disko.nixosModules.disko
-                        ./hosts/creatorforge.nix
+                        ./hosts/creatorforge/creatorforge.nix
+                        ./hosts/creatorforge/networkd.nix
+                        ./hosts/creatorforge/system-pkgs.nix
                         ./modules/system/services/docker.nix
                         ./modules/system/services/openssh.nix
                         ./modules/system/desktop-environments/gnome.nix
@@ -92,6 +94,14 @@
                         ./modules/home-manager/vscode.nix
                         ./modules/home-manager/zsh.nix
                         ./modules/home-manager/git.nix
+                        ./modules/home-manager/zoxide.nix
+                        ./modules/home-manager/ncspot.nix
+                        ./modules/home-manager/zellij.nix
+                        ./modules/home-manager/nushell.nix
+                        ./modules/home-manager/direnv.nix
+                        ./modules/home-manager/home-manager.nix
+                        ./modules/home-manager/starship.nix
+                        ./modules/home-manager/dconf-settings.nix
                     ]; #extra modules to be loaded by home-manager
             };
         };
