@@ -88,12 +88,10 @@
                     ] #extra modules to load
                     [
                         ./modules/home-manager/helix.nix
+                        ./modules/home-manager/alacritty.nix
+                        ./modules/home-manager/vscode.nix
+                        ./modules/home-manager/zsh.nix
                     ]; #extra modules to be loaded by home-manager
-            };
-            packages.${system} = {
-                dconfnixdump = pkgs.writeScriptBin "deconfnixdump"''
-                    dconf dump / | dconf2nix > dconf.nix
-                '';
             };
         };
 
