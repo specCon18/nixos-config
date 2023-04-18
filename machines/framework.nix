@@ -30,7 +30,7 @@
     };
   };
 
-  disko.devices = import ../modules/disko/luks-lvm.nix {
+  disko.devices = import ../modules/system/disko/luks-lvm.nix {
     disks = [ "/dev/nvme0n1" ];
   };
     
