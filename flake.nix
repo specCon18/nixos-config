@@ -7,6 +7,7 @@
         sops-nix.url = github:Mic92/sops-nix;
         devenv.url = "github:cachix/devenv/latest";
         hyprland.url = "github:hyprwm/Hyprland";
+        xdph.url = "github:hyprwm/xdg-desktop-portal-hyprland";
         home-manager = {
             url = "github:nix-community/home-manager/release-22.11";
             inputs.nixpkgs.follows = "nixpkgs";
