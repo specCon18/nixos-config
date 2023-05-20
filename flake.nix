@@ -63,7 +63,7 @@
                     ./machines/proxmox-vm.nix #machine specific configuration
                     "speccon18" #default user
                     [
-                        ./hosts/creatorforge.nix
+                        ./hosts/proton.nix
                         ./modules/system/services/docker.nix
                         ./modules/system/services/openssh.nix
                         ./modules/system/desktop-environments/gnome.nix
