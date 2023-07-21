@@ -69,17 +69,15 @@
                         ./modules/system/desktop-environments/gnome.nix
                     ] #extra modules to load
                     []; #extra modules to be loaded by home-manager
-                creatorforge-framework = mkComputer
-                    ./machines/framework.nix #machine specific configuration
+                katana = mkComputer
+                    ./machines/katana.nix #machine specific configuration
                     "speccon18"  #default user
                     [
-                        nixos-hardware.nixosModules.framework-12th-gen-intel
-                        disko.nixosModules.disko
                         hyprland.nixosModules.default
                         {programs.hyprland.enable = true;}
-                        ./hosts/creatorforge/creatorforge.nix
-                        ./hosts/creatorforge/networkd.nix
-                        ./hosts/creatorforge/system-pkgs.nix
+                        ./hosts/katana/default.nix
+                        ./hosts/katana/networkd.nix
+                        ./hosts/katana/system-pkgs.nix
                         ./modules/system/services/docker.nix
                         ./modules/system/services/openssh.nix
                         ./modules/system/desktop-environments/gnome.nix
