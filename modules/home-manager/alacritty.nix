@@ -8,7 +8,7 @@
             columns = 120;
             lines = 25;
           };
-          decorations = "none";
+          decorations = "full";
           opacity = 0.9;
           title = "Alacritty";
         };

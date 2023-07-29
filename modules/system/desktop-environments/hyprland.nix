@@ -5,5 +5,7 @@
     libsForQt5.qt5.qtwayland
     qt6.qtwayland
     eww-wayland
+    waybar
+    hyprpaper
   ];
 }

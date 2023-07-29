@@ -48,4 +48,20 @@
       jack.enable = true;
     };
   };
+  nix = {
+    # Sets flakes to unstable track instead of stable #
+    package = pkgs.nixUnstable; # or versioned attributes like nix_2_4
+    # Enable flakes and nix-command
+    extraOptions = ''experimental-features = nix-command flakes'';
+    # Auto maintainence
+    settings.auto-optimise-store = lib.mkDefault true;
+    # Prevent tampering of the pkgstore
+    readOnlyStore = true;
+    # Garbage collection
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
+  };
 }

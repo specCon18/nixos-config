@@ -25,5 +25,6 @@
     sops #file based secrets operations
     direnv #used for development environments
     python39  
+    gcc
   ];
 }

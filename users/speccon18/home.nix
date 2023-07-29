@@ -9,23 +9,17 @@
       freecad
       prismlauncher
       calibre
-      w3m
       bitwarden
       firefox
       discord
       nodejs-18_x
       nerdfonts
       fira-code
-      libreoffice
-      asciinema
-      postman
       gimp
       obsidian
       neofetch
       vlc
       remmina
-      signal-desktop
-      just
       bacon
       bottom
       broot

@@ -59,16 +59,6 @@
         in
         {
             nixosConfigurations = {
-                creatorforge-vm = mkComputer
-                    ./machines/proxmox-vm.nix #machine specific configuration
-                    "speccon18" #default user
-                    [
-                        ./hosts/proton.nix
-                        ./modules/system/services/docker.nix
-                        ./modules/system/services/openssh.nix
-                        ./modules/system/desktop-environments/gnome.nix
-                    ] #extra modules to load
-                    []; #extra modules to be loaded by home-manager
                 katana = mkComputer
                     ./machines/katana.nix #machine specific configuration
                     "speccon18"  #default user
@@ -82,6 +72,7 @@
                         ./modules/system/services/openssh.nix
                         ./modules/system/desktop-environments/gnome.nix
                         ./modules/system/desktop-environments/hyprland.nix
+                        ./modules/system/services/syncthing.nix
                         
                     ] #extra modules to load
                     [
