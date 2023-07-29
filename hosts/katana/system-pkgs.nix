@@ -18,7 +18,6 @@
     uutils-coreutils
     htop
     zsh
-    tailscale
     dig #dns lookup
     rage #file encryption
     age-plugin-yubikey #plugin for rage to manage yubi-2fa

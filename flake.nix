@@ -73,6 +73,7 @@
                         ./modules/system/desktop-environments/gnome.nix
                         ./modules/system/desktop-environments/hyprland.nix
                         ./modules/system/services/syncthing.nix
+                        ./modules/system/services/tailscale.nix
                         
                     ] #extra modules to load
                     [
