@@ -13,7 +13,6 @@
       firefox
       discord
       nodejs-18_x
-      nerdfonts
       fira-code
       gimp
       obsidian

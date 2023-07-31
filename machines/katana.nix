@@ -16,6 +16,8 @@
     };
     kernelModules = [ "kvm-intel" ];
     extraModulePackages = [ ];
+    # Prevent tampering of the pkgstore
+    readOnlyNixStore = true;
   };
 
   fileSystems."/" = {

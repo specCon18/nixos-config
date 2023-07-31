@@ -2,14 +2,14 @@
     description = "respec's nixos configs";
 
     inputs = {
-        nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";
+        nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
         nixos-hardware.url = "github:NixOS/nixos-hardware/master";
         sops-nix.url = github:Mic92/sops-nix;
         devenv.url = "github:cachix/devenv/latest";
         hyprland.url = "github:hyprwm/Hyprland";
         xdph.url = "github:hyprwm/xdg-desktop-portal-hyprland";
         home-manager = {
-            url = "github:nix-community/home-manager/release-22.11";
+            url = "github:nix-community/home-manager/release-23.05";
             inputs.nixpkgs.follows = "nixpkgs";
         };
         disko = {

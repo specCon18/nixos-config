@@ -55,8 +55,6 @@
     extraOptions = ''experimental-features = nix-command flakes'';
     # Auto maintainence
     settings.auto-optimise-store = lib.mkDefault true;
-    # Prevent tampering of the pkgstore
-    readOnlyStore = true;
     # Garbage collection
     gc = {
       automatic = true;
