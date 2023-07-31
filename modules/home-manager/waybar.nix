@@ -36,7 +36,7 @@
               ""
               ""
             ];
-          }
+          };
         };
         "network" = {
           "tooltip" = false;
@@ -55,7 +55,7 @@
             "good" = 95;
             "warning" = 30;
             "critical" = 20;
-          }
+          };
           "format" = "{icon} {capacity}%";
           "format-charging" = " {capacity}%";
           "format-plugged" = " {capacity}%";
@@ -67,24 +67,24 @@
             ""
             ""
           ];
-        }
+        };
         "tray" = {
           "icon-size" = 18;
           "spacing" = 10;
-        }
+        };
         "clock" = {
           "format" = "{: %I:%M %p   %d/%m/%Y}";
-        }
+        };
         "cpu" = {
           "interval" = 15;
           "format" = " {}%";
           "max-length" = 10;
-        }
+        };
         "memory" = {
           "interval" = 30;
           "format" = " {}%";
           "max-length" = 10;
-        }
+        };
         "custom/media" = {
           "interval" = 30;
           "format" = "{icon} {}";
@@ -93,7 +93,7 @@
           "format-icons" = {
             "spotify" = " ";
             "default" = " ";
-          }
+          };
           "escape" = true;
           "exec" = "$HOME/.config/system_scripts/mediaplayer.py 2> /dev/null";
           "on-click" = "playerctl play-pause";
