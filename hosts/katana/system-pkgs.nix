@@ -1,19 +1,18 @@
 { modulesPath, config, pkgs, lib, self, ... }:
 {
     environment.systemPackages = with pkgs; [
+        pkg-config
         ripgrep
+        openssl
         tree
-        cargo
         unrar
         unzip
         gzip
         p7zip
         bzip2
         dconf2nix
-        rustc
         bat
         exa
-        mdbook
         uutils-coreutils
         htop
         zsh
@@ -24,5 +23,6 @@
         direnv #used for development environments
         python39  
         gcc
+        bottom
   ];
 }

@@ -1,4 +1,4 @@
- { pkgs, config, lib, ...}:
+{ pkgs, config, lib, ...}:
 {
   programs.waybar = {
     enable = true;
@@ -7,22 +7,19 @@
       main_bar = {
         layer = "top";
         modules-left = [
-          "custom/launcher"
           "cpu"
           "memory"
-          "custom/media"
           "tray"
         ];
-        modules-center = [];
+        modules-center = [
+          "clock"
+        ];
         modules-right = [
-          "custom/updates"
-          "custom/wallpaper"
           "backlight"
           "custom/pw-volume"
-          "clock"
           "battery"
-          "custom/power"
         ];
+        
         "custom/pipewire" = {
           "exec" = "pw-volume status";
           "return-type" = "json";
@@ -84,39 +81,6 @@
           "interval" = 30;
           "format" = " {}%";
           "max-length" = 10;
-        };
-        "custom/media" = {
-          "interval" = 30;
-          "format" = "{icon} {}";
-          "return-type" = "json";
-          "max-length" = 20;
-          "format-icons" = {
-            "spotify" = " ";
-            "default" = " ";
-          };
-          "escape" = true;
-          "exec" = "$HOME/.config/system_scripts/mediaplayer.py 2> /dev/null";
-          "on-click" = "playerctl play-pause";
-        };
-        "custom/launcher" = {
-          "format" = " ";
-          "on-click" = "rofi -show drun";
-          "on-click-right" = "killall rofi";
-        };
-        "custom/power" = {
-          "format" = " ";
-          "on-click" = "bash ~/.config/rofi/leave/leave.sh";
-        };
-        "custom/updates" = {
-          "format" = "{} Update(s)";
-          "exec" = "checkupdates | wc -l";
-          "exec-if" = "[[ $(checkupdates | wc -l) != 0 ]]";
-          "interval" = 15;
-          "on-click" = "alacritty -e paru -Syu && notify-send 'The system has been updated' ";
-        };
-        "custom/wallpaper" = {
-          "format" = " ";
-          "on-click" = "bash ~/.config/system_scripts/pkill_bc";
         };
       };     
     };
@@ -252,68 +216,6 @@
       	transition: none;
       	color: #B5E8E0;
       	background: #161320;
-      }
-
-      #custom-launcher {
-      	font-size: 24px;
-      	margin-top: 6px;
-      	margin-left: 8px;
-      	padding-left: 10px;
-      	padding-right: 5px;
-      	border-radius: 10px;
-      	transition: none;
-        color: #89DCEB;
-        background: #161320;
-      }
-
-      #custom-power {
-      	font-size: 20px;
-      	margin-top: 6px;
-      	margin-left: 8px;
-      	margin-right: 8px;
-      	padding-left: 10px;
-      	padding-right: 5px;
-      	margin-bottom: 0px;
-      	border-radius: 10px;
-      	transition: none;
-      	color: #161320;
-      	background: #F28FAD;
-      }
-
-      #custom-wallpaper {
-      	margin-top: 6px;
-      	margin-left: 8px;
-      	padding-left: 10px;
-      	padding-right: 10px;
-      	margin-bottom: 0px;
-      	border-radius: 10px;
-      	transition: none;
-      	color: #161320;
-      	background: #C9CBFF;
-      }
-
-      #custom-updates {
-      	margin-top: 6px;
-      	margin-left: 8px;
-      	padding-left: 10px;
-      	padding-right: 10px;
-      	margin-bottom: 0px;
-      	border-radius: 10px;
-      	transition: none;
-      	color: #161320;
-      	background: #E8A2AF;
-      }
-
-      #custom-media {
-      	margin-top: 6px;
-      	margin-left: 8px;
-      	padding-left: 10px;
-      	padding-right: 10px;
-      	margin-bottom: 0px;
-      	border-radius: 10px;
-      	transition: none;
-      	color: #161320;
-      	background: #F2CDCD;
       }
     '';
   };

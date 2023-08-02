@@ -7,21 +7,17 @@
     packages = with pkgs; [
       inkscape
       freecad
-      prismlauncher
       calibre
       bitwarden
       firefox
       discord
-      nodejs-18_x
-      fira-code
+      nodejs-20_x
       gimp
       obsidian
       neofetch
       vlc
       remmina
       bacon
-      bottom
-      broot
     ];
   };  
 }

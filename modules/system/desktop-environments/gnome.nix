@@ -4,9 +4,9 @@
   environment.systemPackages = with pkgs; [
     gnomeExtensions.dock-from-dash
     gnomeExtensions.pop-shell
-    gnome.gnome-tweaks
     gnome-extension-manager
   ];
+
   services = {
     gnome = {
       core-utilities.enable = false;
@@ -35,7 +35,7 @@
     xwayland.enable = lib.mkDefault true;
   };
   
-  xdg= {
+  xdg = {
     portal = { enable = lib.mkDefault true; };
     mime.defaultApplications = {
       "text/markdown" = "hx";

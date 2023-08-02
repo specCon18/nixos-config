@@ -14,12 +14,10 @@
         ls = "exa -l";
         lsa = "exa -al";
         cd = "z";
-        osrb = "sudo nixos-rebuild $1 --flake ~/code/nix/nixos-config/#creatorforge-framework";
+        osrb = "sudo nixos-rebuild $1 --flake ~/code/nixos-config/#katana";
         zel = "zellij -s";
-        ns = "nix-shell";
         top = "btm";
-        hx = "hx";
-        cat = "bat";
+        cat = "bat --decorations=never";
         extract = "~/.config/zsh/extract.sh";
       };
       localVariables = {
