@@ -11,7 +11,8 @@
       bitwarden
       firefox
       discord
-      nodejs-20_x
+      nodejs_20
+      fira-code
       gimp
       obsidian
       neofetch
