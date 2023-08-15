@@ -19,7 +19,13 @@
     # Prevent tampering of the pkgstore
     readOnlyNixStore = true;
   };
-
+  nix = {    
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
+  };
   fileSystems."/" = {
       device = "/dev/disk/by-uuid/55c746b3-b9dc-4c9b-ab56-de68a561f9a3";
       fsType = "ext4";
