@@ -7,8 +7,9 @@
   };
   environment = {
     systemPackages = with pkgs; [
-      libsForQt5.polkit-kde-agent
+      # libsForQt5.polkit-kde-agent
       libsForQt5.qt5.qtwayland
+      qt6.full
       qt6.qtwayland
       waybar
       swww
@@ -16,6 +17,7 @@
       rofi-wayland
       libnotify
       mako
+      xdg-desktop-portal-hyprland
     ];
     sessionVariables = {
       WLR_NO_HARDWARE_CURSORS = "1";
@@ -23,7 +25,7 @@
     };
   };
   hardware = {
-#    opengl.enable = true;
-    nvidia.modesetting.enable = true;
+     opengl.enable = true;
+     nvidia.modesetting.enable = true;
   };
 }

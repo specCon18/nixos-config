@@ -27,5 +27,6 @@
         bottom
         felix-fm
         gitui
+        swww
   ];
 }
