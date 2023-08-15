@@ -16,7 +16,7 @@
             lines = 25;
           };
           decorations = "none";
-          opacity = 0.8;
+          opacity = 0.9;
           title = "Alacritty";
         };
         font = {
