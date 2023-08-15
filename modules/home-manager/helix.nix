@@ -25,15 +25,30 @@
         scroll-lines = 1;
         scrolloff = 5;
         cursorline = true;
+        cursor-shape = {
+          normal = "block";
+          insert = "bar";
+          select = "underline";
+        };
         color-modes = true;
         indent-guides.render = true;
         file-picker.hidden = false;
         auto-pairs = true;
         lsp = {
+          enable = true;
           display-messages = true;
+          auto-signature-help = true;
+          display-signature-help-docs = true;
+          snippets = true;
+          goto-reference-include-declaration = true;
         };
         statusline = {
-          left = [ "mode" "spinner" "file-name" ];
+          mode = {
+            normal = "NORMAL";
+            insert = "INSERT";
+            select = "SELECT";
+          };
+          left = [ "mode" "separator" "spinner" "separator" "file-name" ];
           right = [ "diagnostics" "position" "file-encoding" ];
         };
       };

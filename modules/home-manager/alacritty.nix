@@ -3,6 +3,13 @@
       programs.alacritty = {
       enable = true;
       settings = {
+        cursor = {
+          style = {
+            shape = "Beam";
+            blinking = "On";
+            blink_interval = 75;
+          };
+        };
         window = {
           dimensions = {
             columns = 120;

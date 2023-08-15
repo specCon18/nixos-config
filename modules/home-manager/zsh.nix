@@ -14,11 +14,9 @@
         ls = "exa -l";
         lsa = "exa -al";
         cd = "z";
-        osrb = "sudo nixos-rebuild $1 --flake ~/code/nixos-config/#katana";
-        zel = "zellij -s";
+        osrb = "sudo nixos-rebuild $1 --flake ~/code/nixos-config/#$2";
         top = "btm";
         cat = "bat --decorations=never";
-        extract = "~/.config/zsh/extract.sh";
       };
       localVariables = {
         EDITOR="hx";
