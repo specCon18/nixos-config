@@ -1,6 +1,7 @@
 { modulesPath, config, pkgs, lib, self, ... }:
 {
     environment.systemPackages = with pkgs; [
+        nerdfonts
         pkg-config
         ripgrep
         openssl

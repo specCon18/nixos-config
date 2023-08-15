@@ -76,7 +76,7 @@
                         
                     ] #extra modules to load
                     [
-                        hyprland.homeManagerModules.default
+                        # hyprland.homeManagerModules.default
                         # ./modules/home-manager/hyprland.nix
                         ./modules/home-manager/helix.nix
                         ./modules/home-manager/alacritty.nix

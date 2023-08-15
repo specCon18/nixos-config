@@ -8,8 +8,8 @@
             columns = 120;
             lines = 25;
           };
-          decorations = "full";
-          opacity = 0.9;
+          decorations = "none";
+          opacity = 0.8;
           title = "Alacritty";
         };
         font = {
