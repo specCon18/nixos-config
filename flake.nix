@@ -63,8 +63,8 @@
                     ./machines/katana.nix #machine specific configuration
                     "speccon18"  #default user
                     [
-                        # hyprland.nixosModules.default
-                        # ./modules/system/desktop-environments/hyprland.nix
+                        hyprland.nixosModules.default
+                        ./modules/system/desktop-environments/hyprland.nix
                         ./hosts/katana/default.nix
                         ./hosts/katana/networkd.nix
                         ./hosts/katana/system-pkgs.nix
@@ -74,10 +74,10 @@
                         ./modules/system/services/syncthing.nix
                         ./modules/system/services/tailscale.nix
                         
-                    ] #extra modules to load
+                    ] #extra modules to be loaded
                     [
-                        # hyprland.homeManagerModules.default
-                        # ./modules/home-manager/hyprland.nix
+                        hyprland.homeManagerModules.default
+                        ./modules/home-manager/hyprland.nix
                         ./modules/home-manager/helix.nix
                         ./modules/home-manager/alacritty.nix
                         ./modules/home-manager/vscode.nix

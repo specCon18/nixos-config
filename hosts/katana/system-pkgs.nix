@@ -25,5 +25,7 @@
         python39  
         gcc
         bottom
+        felix-fm
+        gitui
   ];
 }
