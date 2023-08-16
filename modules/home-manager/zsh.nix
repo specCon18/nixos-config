@@ -20,7 +20,6 @@
       };
       localVariables = {
         EDITOR="hx";
-        TERM="alacritty";
       };
     };
 }

@@ -28,5 +28,6 @@
         felix-fm
         gitui
         swww
+        rofi
   ];
 }
