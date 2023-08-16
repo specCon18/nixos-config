@@ -1,5 +1,5 @@
 {
-    description = "respec's nixos configs";
+    description = "spec's nixos configs";
 
     inputs = {
         nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
