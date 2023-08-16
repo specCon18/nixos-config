@@ -18,7 +18,7 @@
         };
     };
 
-    outputs = { self, home-manager, nixos-hardware, disko, nixpkgs, sops-nix, devenv, hyprland, xdph ... }@inputs:
+    outputs = { self, home-manager, nixos-hardware, disko, nixpkgs, sops-nix, devenv, hyprland, xdph, ... }@inputs:
         let
             system = "x86_64-linux";
             pkgs = import nixpkgs {
