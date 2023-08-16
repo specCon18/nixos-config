@@ -7,7 +7,7 @@
         sops-nix.url = github:Mic92/sops-nix;
         devenv.url = "github:cachix/devenv/latest";
         hyprland.url = "github:hyprwm/Hyprland";
-        xdph.url = "github:hyprwm/xdg-desktop-portal-hyprland";
+        # xdph.url = "github:hyprwm/xdg-desktop-portal-hyprland";
         home-manager = {
             url = "github:nix-community/home-manager/release-23.05";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -18,7 +18,7 @@
         };
     };
 
-    outputs = { self, home-manager, nixos-hardware, disko, nixpkgs, sops-nix, devenv, hyprland, xdph, ... }@inputs:
+    outputs = { self, home-manager, nixos-hardware, disko, nixpkgs, sops-nix, devenv, hyprland, ... }@inputs:
         let
             system = "x86_64-linux";
             pkgs = import nixpkgs {
@@ -63,7 +63,7 @@
                     ./machines/katana.nix #machine specific configuration
                     "speccon18"  #default user
                     [
-                        hyprland.nixosModules.default
+                        # hyprland.nixosModules.default
                         ./modules/system/desktop-environments/hyprland.nix
                         ./hosts/katana/default.nix
                         ./hosts/katana/networkd.nix

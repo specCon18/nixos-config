@@ -1,9 +1,5 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}: let
+{ config, pkgs, lib, ...}:
+let
   inherit (lib) mkEnableOption mkIf;
   cfg = config.speccon18.desktop.hyprland;
 in {
@@ -13,7 +9,7 @@ in {
   config = mkIf cfg.enable {
     programs.hyprland = {
       enable = true;
-      enableNvidiaPatches = true;
+      nvidiaPatches = true;
       xwayland.enable = true;
     };
     environment = {
@@ -28,6 +24,7 @@ in {
         rofi-wayland
         libnotify
         mako
+        hyprland
       ];
       sessionVariables = {
         WLR_NO_HARDWARE_CURSORS = "1";
@@ -37,8 +34,8 @@ in {
     xdg.portal = {
       enable = true;
       extraPortals = [
-        pkgs.xdg-desktop-portal-hyprland
         pkgs.xdg-desktop-portal-gtk
+        pkgs.xdg-desktop-portal-hyprland
       ];
     };
     hardware = {

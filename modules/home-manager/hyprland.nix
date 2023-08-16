@@ -1,7 +1,7 @@
 { pkgs, config, lib, ...}:
 {
   wayland.windowManager.hyprland = {
-#    systemdIntegration = true;
+   # systemdIntegration = true;
     enable = true;
     extraConfig = ''
       bind = SUPER, Return, exec, alacritty
