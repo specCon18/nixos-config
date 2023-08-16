@@ -60,6 +60,11 @@
       options = "--delete-older-than 7d";
     };
   };
-  speccon18.desktop.hyprland.enable = true;
-  speccon18.desktop.gnome.enable = false;
+  speccon18 = {
+    desktop = {
+      hyprland.enable = true;
+      gnome.enable = false;
+      displayManager.tuigreet.enable = true;
+    };
+  };
 }

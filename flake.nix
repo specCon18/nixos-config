@@ -63,7 +63,7 @@
                     ./machines/katana.nix #machine specific configuration
                     "speccon18"  #default user
                     [
-                        # hyprland.nixosModules.default
+                        ./modules/system/desktop-environments/tuigreet.nix
                         ./modules/system/desktop-environments/hyprland.nix
                         ./hosts/katana/default.nix
                         ./hosts/katana/networkd.nix
