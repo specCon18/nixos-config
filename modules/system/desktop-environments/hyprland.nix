@@ -28,7 +28,6 @@ in {
         rofi-wayland
         libnotify
         mako
-        xdg-desktop-portal-hyprland
       ];
       sessionVariables = {
         WLR_NO_HARDWARE_CURSORS = "1";
