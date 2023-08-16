@@ -62,6 +62,6 @@
       options = "--delete-older-than 7d";
     };
   };
-  speccon18.desktop.hyperland.enable = true;
+  speccon18.desktop.hyprland.enable = true;
   speccon18.desktop.gnome.enable = false;
 }
