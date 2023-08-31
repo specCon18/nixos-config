@@ -29,5 +29,6 @@
         gitui
         swww
         rofi
+        prismlauncher
   ];
 }
