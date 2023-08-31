@@ -1,11 +1,11 @@
 * {
   /* `otf-font-awesome` is required to be installed for icons */
-  font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  font-family: FontAwesome, FiraCode, Helvetica, Arial, sans-serif;
+  font-size: 16px;
 }
 
 window#waybar {
-  background-color: rgba(43, 48, 59, 0.5);
+  background-color: rgba(68, 64, 60, 1);
   border-bottom: 3px solid rgba(100, 114, 125, 0.5);
   color: #ffffff;
   transition-property: background-color;
@@ -48,25 +48,6 @@ button:hover {
   box-shadow: inset 0 -3px #ffffff;
 }
 
-#workspaces button {
-  padding: 0 5px;
-  background-color: transparent;
-  color: #ffffff;
-}
-
-#workspaces button:hover {
-  background: rgba(0, 0, 0, 0.2);
-}
-
-#workspaces button.focused {
-  background-color: #64727D;
-  box-shadow: inset 0 -3px #ffffff;
-}
-
-#workspaces button.urgent {
-  background-color: #eb4d4b;
-}
-
 #mode {
   background-color: #64727D;
   border-bottom: 3px solid #ffffff;
@@ -89,7 +70,7 @@ button:hover {
 #scratchpad,
 #mpd {
   padding: 0 10px;
-  color: #ffffff;
+  color: #030712;
 }
 
 #window,
@@ -97,18 +78,8 @@ button:hover {
   margin: 0 4px;
 }
 
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left>widget:first-child>#workspaces {
-  margin-left: 0;
-}
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right>widget:last-child>#workspaces {
-  margin-right: 0;
-}
-
 #clock {
-  background-color: #64727D;
+  background-color: #ec4899;
 }
 
 #battery {
@@ -144,12 +115,13 @@ label:focus {
 }
 
 #cpu {
-  background-color: #2ecc71;
-  color: #000000;
+  background-color: #10b981;
+  color: #030712;
 }
 
 #memory {
-  background-color: #9b59b6;
+  background-color: #d946ef;
+  color: #030712;
 }
 
 #disk {
@@ -157,20 +129,21 @@ label:focus {
 }
 
 #backlight {
-  background-color: #90b1b1;
+  background-color: #8b5cf6;
 }
 
 #network {
-  background-color: #2980b9;
+  background-color: #0ea5e9;
+  color: #030712;
 }
 
 #network.disconnected {
-  background-color: #f53c3c;
+  background-color: #ef4444;
 }
 
 #pulseaudio {
-  background-color: #f1c40f;
-  color: #000000;
+  background-color: #eab308;
+  color: #030712;
 }
 
 #pulseaudio.muted {
@@ -270,12 +243,4 @@ label:focus {
 
 #keyboard-state>label.locked {
   background: rgba(0, 0, 0, 0.2);
-}
-
-#scratchpad {
-  background: rgba(0, 0, 0, 0.2);
-}
-
-#scratchpad.empty {
-  background-color: transparent;
 }
