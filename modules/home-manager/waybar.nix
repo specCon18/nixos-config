@@ -5,7 +5,7 @@
     package = pkgs.waybar;
     systemd = {
       enable = true;
-      target = "hyprland-session.target"
+      target = "hyprland-session.target";
     };
     settings = {
       main_bar = {
@@ -26,12 +26,6 @@
           "pulseaudio"
           "battery"
         ];
-        river/tags = {
-          num-tags = 9;
-        };
-        river/mode = {
-          format = "Mode: {}";
-        };
         clock = {
           format = "{:%H:%M}";
               format-alt = "{:%Y-%m-%d}";
@@ -86,7 +80,7 @@
           scroll-steps = 10;
           format-icons = {
             headphone = "";
-            "hands-free" = "";
+            hands-free = "";
             headset = "";
             phone = "";
             portable = "";
@@ -103,11 +97,6 @@
           icon-size = 20;
           spacing = 10;
         };
-        custom/joljol = {
-          exec = "joljol";
-          format = "{}";
-          update-interval = 100;
-      };
     };
 
     style = ''
@@ -185,10 +174,6 @@
       	color: #ebbcba;
       }
       
-      #custom-joljol {
-      	color: #ebbcba;
-      	margin: 10px 10px 0px 10px;
-      }
       
       #battery {
       	background: #31748f;
@@ -320,4 +305,5 @@
       }
     '';
   };
+};
 }

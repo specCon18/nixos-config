@@ -90,6 +90,7 @@
                         ./modules/home-manager/starship.nix
                         ./modules/home-manager/dconf-settings.nix
                         ./modules/home-manager/syncthing.nix
+                        ./modules/home-manager/waybar.nix
                     ]; #extra modules to be loaded by home-manager
             };
         };
