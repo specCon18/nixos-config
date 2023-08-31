@@ -22,12 +22,17 @@
         font = {
           normal = {
             family = "SauceCodePro Nerd Font";
+            style = "Regular";
           };
           bold = {
             family = "SauceCodePro Nerd Font";
-            style = "bold";
+            style = "Bold";
           };
-          size = 12;
+          italic = {
+            family = "SauceCodePro Nerd Font";
+            style = "Italic";
+          };
+          size = 14;
         };
         colors = {
           primary = {

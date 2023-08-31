@@ -9,7 +9,7 @@
     nodePackages_latest.typescript-language-server
     nodePackages_latest.svelte-language-server
     nodePackages_latest.vls
-    python39Packages.python-lsp-server
+    python311Packages.python-lsp-server
     rnix-lsp
     rust-analyzer
     taplo
