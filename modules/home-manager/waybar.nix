@@ -15,10 +15,10 @@
             spacing = 8; 
             modules-left = [];
             modules-center = [
+              "temperature"
             ];
             modules-right = [
               "battery"
-              "temperature"
               "backlight"
               "cpu"
               "memory"
@@ -79,9 +79,9 @@
                   ""
                 ];
             };
-            # "battery#bat2": {
-                # "bat": "BAT2"
-            # },
+            "battery#bat2" = {
+                bat = "BAT2";
+            };
             network = {
                 format-wifi = "{essid} ({signalStrength}%) ";
                 format-ethernet = "{ipaddr}/{cidr} ";

@@ -91,6 +91,7 @@
                         ./modules/home-manager/dconf-settings.nix
                         ./modules/home-manager/syncthing.nix
                         ./modules/home-manager/waybar.nix
+                        ./modules/home-manager/rofi.nix
                     ]; #extra modules to be loaded by home-manager
             };
         };
