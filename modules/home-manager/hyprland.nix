@@ -5,9 +5,11 @@
     enable = true;
     extraConfig = ''
       $mainMod = SUPER
+      # Application Lauch Keybinds
       bind = $mainMod, Return, exec, alacritty
       bind = $mainMod, W, exec, firefox
       bind = $mainMod, R, exec, rofi -show drun      
+
       # Switch workspaces with mainMod + [0-9]
       bind = $mainMod, 1, workspace, 1
       bind = $mainMod, 2, workspace, 2
@@ -31,6 +33,8 @@
       bind = $mainMod SHIFT, 8, movetoworkspace, 8
       bind = $mainMod SHIFT, 9, movetoworkspace, 9
       bind = $mainMod SHIFT, 0, movetoworkspace, 10
+
+      # Startup Runners
       exec-once=systemctl --user start waybar.service
       exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
       exec-once=mako

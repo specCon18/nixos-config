@@ -22,7 +22,9 @@
         age-plugin-yubikey #plugin for rage to manage yubi-2fa
         sops #file based secrets operations
         direnv #used for development environments
-        python39  
+        python311Packages.pip 
+        python311
+        python311Packages.pygithub
         gcc
         bottom
         felix-fm
@@ -30,5 +32,6 @@
         swww
         rofi
         prismlauncher
+        parallel
   ];
 }

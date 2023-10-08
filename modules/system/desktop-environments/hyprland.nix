@@ -26,6 +26,7 @@ in {
         mako
         hyprland
         font-awesome
+        brightnessctl
       ];
       sessionVariables = {
         #Enable Wayland
