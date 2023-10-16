@@ -1,6 +1,8 @@
 { modulesPath, config, pkgs, lib, self, ... }:
 {
     environment.systemPackages = with pkgs; [
+        bluez
+        blueman
         nerdfonts
         pkg-config
         ripgrep
