@@ -14,4 +14,18 @@
       "docker"
     ];
   };
+  services.xremap = {
+    withWlroots = true;
+    userName = "speccon18";
+    config = {
+      keymap = [
+        {
+          name = "Global";
+          remap = {
+            "CapsLock" = "Esc";
+          };
+        }
+      ];
+    };
+  };
 }

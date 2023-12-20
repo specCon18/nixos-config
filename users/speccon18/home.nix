@@ -29,6 +29,7 @@
       vlc
       remmina
       bacon
+      skate
     ];
   };  
 }

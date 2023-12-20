@@ -34,6 +34,8 @@
       bind = $mainMod SHIFT, 9, movetoworkspace, 9
       bind = $mainMod SHIFT, 0, movetoworkspace, 10
 
+      bind = $mainMod, Print, exec, grim -o /home/speccon18/Pictures/$(date +'%s_grim.png') -g "$(slurp)" -t png
+
       # Startup Runners
       exec-once=systemctl --user start waybar.service
       exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP

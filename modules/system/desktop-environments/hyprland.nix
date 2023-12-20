@@ -27,6 +27,10 @@ in {
         hyprland
         font-awesome
         brightnessctl
+        grim
+        slurp
+        imagemagick
+        wl-clipboard
       ];
       sessionVariables = {
         #Enable Wayland

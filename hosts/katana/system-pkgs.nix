@@ -35,5 +35,6 @@
         rofi
         prismlauncher
         parallel
+        skate
   ];
 }
