@@ -57,8 +57,8 @@
                 format-icons = ["" "" ""];
             };
             backlight = {
-                format = "{percent}% {icon}";
-                format-icons = ["" "" "" "" "" "" "" "" ""];
+              format = "{percent} {icon}";
+              format-icons = ["" "" "" "" "" "" "" "" ""];
             };
             battery = {
                 states = {

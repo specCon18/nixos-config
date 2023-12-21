@@ -29,7 +29,6 @@ in {
         brightnessctl
         grim
         slurp
-        imagemagick
         wl-clipboard
       ];
       sessionVariables = {
