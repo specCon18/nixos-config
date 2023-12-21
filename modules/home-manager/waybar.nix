@@ -13,12 +13,13 @@
             position = "top";
             height = 40;
             spacing = 8; 
-            modules-left = [];
+            modules-left = [
+              "battery"
+            ];
             modules-center = [
               "temperature"
             ];
             modules-right = [
-              "battery"
               "backlight"
               "cpu"
               "memory"
@@ -66,7 +67,7 @@
                     critical = 15;
                 };
                 format = "{capacity}% {icon}";
-                format-charging = "{capacity}% ";
+                format-charging = "{capacity}% ";
                 format-plugged = "{capacity}% ";
                 format-alt = "{time} {icon}";
                 format-good = "";
@@ -80,7 +81,7 @@
                 ];
             };
             "battery#bat2" = {
-                bat = "BAT2";
+                bat = "BAT";
             };
             network = {
                 format-wifi = "{essid} ({signalStrength}%) ";
@@ -94,14 +95,14 @@
                 scroll-step = 1;
                 format = "{volume}% {icon} {format_source}";
                 format-bluetooth = "{volume}% {icon} {format_source}";
-                format-bluetooth-muted = " {icon} {format_source}";
+                format-bluetooth-muted = "{icon} {format_source}";
                 format-muted = " {format_source}";
                 format-source = "{volume}% ";
                 format-source-muted = "";
                 format-icons = {
                     headphone = "";
-                    hands-free = "";
-                    headset = "";
+                    hands-free = "";
+                    headset = "";
                     phone = "";
                     portable = "";
                     car = "";

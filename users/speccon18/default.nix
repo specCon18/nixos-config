@@ -14,18 +14,22 @@
       "docker"
     ];
   };
-  services.xremap = {
-    withWlroots = true;
-    userName = "speccon18";
-    config = {
-      keymap = [
-        {
-          name = "Global";
-          remap = {
-            "CapsLock" = "Esc";
+services.xremap = {
+  withWlroots = true;
+  userName = "speccon18";
+  config = {
+    keymap = [
+      {
+        name = "Global";
+        remap = {
+          "CapsLock" = "Esc";
+          "Print" = {
+            launch = [ "zsh" "-c" "grim -o /home/speccon18/Pictures/$(date +'%s_grim.png') -g $(slurp) -t png" ];
           };
-        }
-      ];
-    };
+        };
+      }
+    ];
   };
+};
+
 }
