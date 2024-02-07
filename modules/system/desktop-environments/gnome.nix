@@ -13,15 +13,12 @@ in {
   config = mkIf cfg.enable {
     # Gnome extensions
     environment.systemPackages = with pkgs; [
-      gnomeExtensions.dock-from-dash
-      gnomeExtensions.pop-shell
-      gnome-extension-manager
     ];
 
     services = {
       gnome = {
         core-utilities.enable = false;
-        gnome-keyring.enable = true;
+        gnome-keyring.enable = false;
       };
       
       xserver = {

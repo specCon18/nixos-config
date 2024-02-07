@@ -4,6 +4,7 @@
         bluez
         blueman
         nerdfonts
+        home-manager
         pkg-config
         ripgrep
         openssl

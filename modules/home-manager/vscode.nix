@@ -1,7 +1,7 @@
 { pkgs, config, lib, ...}:
 {
       programs.vscode = {
-      enable = true;
+      enable = false;
       package = pkgs.vscode.fhs;
       enableExtensionUpdateCheck = true;
       enableUpdateCheck = false;

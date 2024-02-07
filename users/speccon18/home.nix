@@ -30,6 +30,7 @@
       remmina
       bacon
       skate
+      neovim
     ];
   };  
 }
