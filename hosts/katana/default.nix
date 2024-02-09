@@ -62,7 +62,7 @@
   };
   speccon18 = {
     desktop = {
-      hyprland.enable = true;
+      hyprland.enable = false;
       gnome.enable = false;
       displayManager.tuigreet.enable = true;
     };

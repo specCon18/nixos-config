@@ -9,15 +9,7 @@
         ripgrep
         openssl
         tree
-        unrar
-        unzip
-        gzip
-        p7zip
-        bzip2
-        dconf2nix
-        bat
         exa
-        uutils-coreutils
         htop
         zsh
         dig #dns lookup
@@ -32,10 +24,6 @@
         bottom
         felix-fm
         gitui
-        swww
-        rofi
-        prismlauncher
-        parallel
-        skate
+        spotify
   ];
 }

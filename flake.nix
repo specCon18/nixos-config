@@ -66,6 +66,7 @@
                     [
                         ./modules/system/desktop-environments/tuigreet.nix
                         ./modules/system/desktop-environments/hyprland.nix
+                        ./modules/system/desktop-environments/budgie.nix
                         ./hosts/katana/default.nix
                         ./hosts/katana/bluetooth.nix
                         ./hosts/katana/networkd.nix
@@ -76,7 +77,7 @@
                         ./modules/system/services/syncthing.nix
                         ./modules/system/services/tailscale.nix
                         
-                    ] #extra modules to be loaded
+                    ] #extra modules to be loaded by nixos
                     [
                        hyprland.homeManagerModules.default
                         ./modules/home-manager/hyprland.nix

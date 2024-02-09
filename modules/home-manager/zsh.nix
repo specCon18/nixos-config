@@ -13,10 +13,8 @@
       shellAliases = {
         ls = "exa -l";
         lsa = "exa -al";
-        cd = "z";
+        grep = "rg";
         osrb = "sudo nixos-rebuild $1 --flake ~/code/nixos-config/#katana";
-        top = "btm";
-        cat = "bat --decorations=never";
       };
       localVariables = {
         EDITOR="hx";

@@ -18,7 +18,7 @@ in {
     services = {
       gnome = {
         core-utilities.enable = false;
-        gnome-keyring.enable = false;
+        gnome-keyring.enable = true;
       };
       
       xserver = {
@@ -30,7 +30,7 @@ in {
               enable = true;
               wayland = true;
             };
-            defaultSession = lib.mkDefault "gnome";
+            # defaultSession = lib.mkDefault "gnome";
           };
         desktopManager = {
           xterm.enable = false;
@@ -44,7 +44,7 @@ in {
   };
   
   xdg = {
-    # portal = { enable = lib.mkDefault true; };
+    portal = { enable = lib.mkDefault true; };
     mime.defaultApplications = {
       "text/markdown" = "hx";
     };
