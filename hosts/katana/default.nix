@@ -64,6 +64,7 @@
     desktop = {
       hyprland.enable = false;
       gnome.enable = false;
+      budgie.enable = true;
       displayManager.tuigreet.enable = true;
     };
   };
