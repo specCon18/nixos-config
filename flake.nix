@@ -2,13 +2,13 @@
     description = "spec's nixos configs";
 
     inputs = {
-        nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
+        nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
         nixos-hardware.url = "github:NixOS/nixos-hardware/master";
         sops-nix.url = "github:Mic92/sops-nix";
         xremap.url = "github:xremap/nix-flake";
         hyprland.url = "github:hyprwm/Hyprland";
         home-manager = {
-            url = "github:nix-community/home-manager/release-23.05";
+            url = "github:nix-community/home-manager/release-23.11";
             inputs.nixpkgs.follows = "nixpkgs";
         };
         disko = {
@@ -67,16 +67,15 @@
                         ./modules/system/desktop-environments/tuigreet.nix
                         ./modules/system/desktop-environments/hyprland.nix
                         ./modules/system/desktop-environments/budgie.nix
+                        ./modules/system/desktop-environments/gnome.nix
                         ./hosts/katana/default.nix
                         ./hosts/katana/bluetooth.nix
                         ./hosts/katana/networkd.nix
                         ./hosts/katana/system-pkgs.nix
                         ./modules/system/services/docker.nix
                         ./modules/system/services/openssh.nix
-                        ./modules/system/desktop-environments/gnome.nix
                         ./modules/system/services/syncthing.nix
                         ./modules/system/services/tailscale.nix
-                        
                     ] #extra modules to be loaded by nixos
                     [
                        hyprland.homeManagerModules.default
@@ -89,7 +88,6 @@
                         ./modules/home-manager/zoxide.nix
                         ./modules/home-manager/ncspot.nix
                         ./modules/home-manager/zellij.nix
-                        ./modules/home-manager/nushell.nix
                         ./modules/home-manager/direnv.nix
                         ./modules/home-manager/home-manager.nix
                         ./modules/home-manager/starship.nix

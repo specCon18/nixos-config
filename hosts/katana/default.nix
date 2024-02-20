@@ -32,7 +32,6 @@
   services = {
     printing.enable = true;
     xserver = {
-      displayManager.gdm.enable = true;
       layout = "us";
       xkbVariant = "";
     };
@@ -65,7 +64,7 @@
       hyprland.enable = false;
       gnome.enable = false;
       budgie.enable = true;
-      displayManager.tuigreet.enable = true;
+      displayManager.tuigreet.enable = false;
     };
   };
   fonts.fonts = with pkgs; [

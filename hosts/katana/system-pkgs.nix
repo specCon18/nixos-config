@@ -25,5 +25,6 @@
         felix-fm
         gitui
         spotify
+        zulip
   ];
 }

@@ -30,11 +30,11 @@ in {
               enable = true;
               wayland = true;
             };
-            # defaultSession = lib.mkDefault "gnome";
+            defaultSession = lib.mkDefault "budgie-desktop";
           };
         desktopManager = {
           xterm.enable = false;
-          gnome.enable = lib.mkDefault true;
+          # gnome.enable = lib.mkDefault true;
         };
       };
   };

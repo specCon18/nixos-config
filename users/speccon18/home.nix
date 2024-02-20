@@ -21,7 +21,7 @@
       firefox
       discord
       gimp
-      obsidian
+      # obsidian
       neofetch
       vlc
       remmina
