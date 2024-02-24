@@ -11,10 +11,6 @@ in {
     enable = mkEnableOption "enables specs custom budgie setup";
   };
   config = mkIf cfg.enable {
-  
-    environment.systemPackages = with pkgs; [
-      lightdm
-    ];
     services.xserver = {
       enable = true;
       desktopManager.budgie.enable = true;
