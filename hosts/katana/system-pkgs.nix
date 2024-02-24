@@ -26,5 +26,6 @@
         gitui
         spotify
         zulip
+        surrealdb
   ];
 }

@@ -14,7 +14,6 @@ in {
   
     environment.systemPackages = with pkgs; [
       budgie.budgie-desktop-with-plugins
-      lightdm
     ];
     services.xserver = {
       enable = true;
