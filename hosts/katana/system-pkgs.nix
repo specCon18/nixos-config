@@ -9,7 +9,7 @@
         ripgrep
         openssl
         tree
-        exa
+        # exa
         htop
         zsh
         dig #dns lookup
@@ -26,6 +26,6 @@
         gitui
         spotify
         zulip
-        surrealdb
+        vscode
   ];
 }

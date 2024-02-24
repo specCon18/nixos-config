@@ -9,7 +9,7 @@
       };
       enableAutosuggestions = lib.mkDefault true;
       enableCompletion = lib.mkDefault true;
-      enableSyntaxHighlighting = lib.mkDefault true;
+      syntaxHighlighting.enable = lib.mkDefault true;
       shellAliases = {
         ls = "exa -l";
         lsa = "exa -al";

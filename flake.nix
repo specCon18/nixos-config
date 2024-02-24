@@ -74,7 +74,7 @@
                         ./hosts/katana/system-pkgs.nix
                         ./modules/system/services/docker.nix
                         ./modules/system/services/openssh.nix
-                        ./modules/system/services/syncthing.nix
+                        # ./modules/system/services/syncthing.nix
                         ./modules/system/services/tailscale.nix
                     ] #extra modules to be loaded by nixos
                     [
