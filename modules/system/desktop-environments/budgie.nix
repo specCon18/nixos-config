@@ -13,12 +13,12 @@ in {
   config = mkIf cfg.enable {
   
     environment.systemPackages = with pkgs; [
-      budgie.budgie-desktop-with-plugins
+      lightdm
     ];
     services.xserver = {
       enable = true;
       desktopManager.budgie.enable = true;
-      displayManager.gdm.enable = true;
+      displayManager.lightdm.enable = true;
     };
   };
 }

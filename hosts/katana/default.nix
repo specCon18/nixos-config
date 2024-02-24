@@ -10,7 +10,7 @@
   sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
-
+  boot.plymouth.enable = true;
   # Localization
   time.timeZone = "America/Detroit";
   i18n = {

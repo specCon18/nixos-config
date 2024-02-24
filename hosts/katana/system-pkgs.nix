@@ -9,7 +9,7 @@
         ripgrep
         openssl
         tree
-        # exa
+        eza
         htop
         zsh
         dig #dns lookup

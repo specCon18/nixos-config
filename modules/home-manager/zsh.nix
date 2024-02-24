@@ -11,8 +11,8 @@
       enableCompletion = lib.mkDefault true;
       syntaxHighlighting.enable = lib.mkDefault true;
       shellAliases = {
-        ls = "exa -l";
-        lsa = "exa -al";
+        ls = "eza -l";
+        lsa = "eza -al";
         grep = "rg";
         osrb = "sudo nixos-rebuild $1 --flake ~/code/nixos-config/#katana";
       };
