@@ -2,22 +2,23 @@
 config
 , lib
 , pkgs
+, ...
 }: 
 let
   # To use this feature add -j0 to any nix commad.
-  hostName = "bob.local";
-
+  hostName = "10.18.1.60";
+  pubKey = "bob:cday7vAQb+UWE1gQOAOjqnXB8EdjkBt+/Ife/R0ylUY=";
 in {
     nix = {
       distributedBuilds = true;
       settings = {
         trusted-public-keys = lib.mkAfter [
-          # REMOTE MACHINE PUBLIC KEY WE GENERATE AFTER SETTING UP
+          pubKey
         ];
         builders-use-substitutes = true;
-        substituters = lib.mkAfter [
-          "ssh-ng://nix-ssh@{hostname}"
-        ];
+        # substituters = lib.mkAfter [
+        #   "ssh-ng://nix-ssh@${hostname}"
+        # ];
         # allowed-users = [
         #   "@wheel"
         #   "@builders"
@@ -42,9 +43,9 @@ in {
               "kvm"
               "benchmark"
             ];
-            sshUser = "builder";
+            sshUser = "root";
             sshKey = "/root/.ssh/id_ed25519";
-            # publicHostKey = config.local.keys.gerg-desktop_fingerprint;
+            # publicHostKey = 
           }
         ];
     };

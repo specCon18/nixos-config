@@ -76,6 +76,7 @@
                         ./modules/system/services/openssh.nix
                         # ./modules/system/services/syncthing.nix
                         ./modules/system/services/tailscale.nix
+                        ./modules/system/nix-cli
                     ] #extra modules to be loaded by nixos
                     [
                        hyprland.homeManagerModules.default
